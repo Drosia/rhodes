@@ -53,16 +53,8 @@
       text-align: center;
       color: #ffffff;
 
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-
-
       @media only screen and (max-width: $max-md) {
          padding: 25px 0;
-         flex-direction: column;
       }
 
    }
@@ -79,25 +71,6 @@
       padding-top: 4px;
       font-size: 8px;
       line-height: 1;
-   }
-   &--txt {
-      margin-right: auto;
-      @media only screen and (max-width: $max-md) {
-         margin-right: unset;
-      }
-   }
-   &--logo {
-
-      display: flex;
-      gap: 25px;
-      align-items: center;
-      margin-right: auto;
-      @media only screen and (max-width: $max-md) {
-         margin-right: unset;
-      }
-      img {
-         max-width: 34px;
-      }
    }
 
    &--col-1 {

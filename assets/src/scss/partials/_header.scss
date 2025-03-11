@@ -49,8 +49,8 @@
    }
 
    &__center {
-      flex-basis: 630px;
-      max-width: 630px;
+      flex-basis: 560px;
+      max-width: 560px;
 
       @media only screen and (max-width: $max-lg) {
          flex-basis: 100%;

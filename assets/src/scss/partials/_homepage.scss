@@ -73,8 +73,8 @@
       height: 81px;
       color: #fff;
       width: 100%;
-      flex-basis: 420px;
-      max-width: 420px;
+      flex-basis: 386px;
+      max-width: 386px;
       background-color: #fff;
 
       @media only screen and (max-width: $max-md) {
@@ -95,8 +95,8 @@
       }
 
       &:last-of-type {
-         flex-basis: 320px;
-         max-width: 320px;
+         flex-basis: 438px;
+         max-width: 438px;
 
          @media only screen and (max-width: $max-md) {
             flex-basis: 70px;
@@ -108,7 +108,6 @@
       label {
          font-size: 18px;
          padding-left: 30px;
-         white-space: nowrap;
       }
 
       input,
