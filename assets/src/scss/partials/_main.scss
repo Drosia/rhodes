@@ -1,0 +1,261 @@
+/* ==========================================================================
+   SCSS Styles [PARTIALS:MAIN]
+   ========================================================================== */
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+
+	//overflow-x: hidden;
+	&.active {
+		overflow: hidden;
+
+		header {
+			background-color: #0f1832;
+			;
+		}
+	}
+}
+
+html {
+	color: var(--main-font-color);
+	font-family: var(--main-font-family);
+	font-size: var(--main-font-size);
+	line-height: var(--main-line-height);
+	scroll-behavior: smooth;
+}
+
+.container {
+	&--header {
+		max-width: 1280px;
+	}
+}
+
+.section {
+	position: relative;
+}
+
+.archive-destinations {
+	margin: 200px 0 0px;
+	color: #0f1832;
+	line-height: 1.2;
+	text-align: center;
+
+	@media only screen and (max-width: $max-lg) {
+		margin: 150px 0 0px;
+	}
+
+	h1 {
+		font-size: 90px;
+
+		@media only screen and (max-width: $max-lg) {
+			font-size: 32px;
+		}
+
+		@media only screen and (max-width: $max-md) {
+			font-size: 26px;
+		}
+	}
+
+	h2 {
+		font-size: 44px;
+
+		@media only screen and (max-width: $max-lg) {
+			font-size: 26px;
+		}
+
+		@media only screen and (max-width: $max-md) {
+			font-size: 20px;
+		}
+	}
+
+}
+
+.page-template-page-gallery,
+.page-template-default {
+	header {
+		background-color: #0f1832;
+	}
+}
+
+.post-type-archive-destination {
+	background-image: url('../images/destinations-background.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	header {
+		background-color: #0f1832;
+	}
+}
+
+.section--location {
+	margin: 200px 0;
+
+	@media only screen and (max-width: $max-md) {
+		margin: 150px 0;
+	}
+
+	&.section--location__random {
+		@media only screen and (max-width: $max-md) {
+			margin: 50px 0;
+		}
+
+		h2 {
+			font-size: 40px;
+			text-align: center;
+			margin: 30px 0;
+			line-height: 1.2;
+
+			@media only screen and (max-width: $max-md) {
+				margin-top: 0;
+			}
+		}
+
+		.location--container {
+			margin-top: 0;
+		}
+	}
+
+}
+
+.lightbox {
+	position: fixed;
+	top: 50% !important;
+	left: 0px !important;
+	transform: translateY(-50%);
+}
+
+/* Ensures lightbox navigation arrows are visible */
+.lb-arrow-left,
+.lb-arrow-right {
+	display: block !important;
+	z-index: 9999;
+	/* Make sure arrows are above other content */
+}
+
+//Single Destination
+.section--destination-content {
+	margin: 100px 0 150px;
+}
+
+.destination {
+	&-content {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		flex-wrap: wrap;
+		margin-bottom: 80px;
+
+		@media only screen and (max-width: $max-xl) {
+			justify-content: center;
+			margin-bottom: 40px;
+		}
+
+		&.image-right {
+			flex-direction: row-reverse;
+
+			img {
+				margin-left: auto;
+				display: block;
+			}
+		}
+
+		&__image {
+			flex-basis: 500px;
+			max-width: 500px;
+
+			@media only screen and (max-width: $max-md) {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&__text {
+			flex-basis: 500px;
+			max-width: 500px;
+			line-height: 1.2;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+
+			@media only screen and (max-width: $max-md) {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+
+			h2 {
+				font-size: 35px;
+				margin-bottom: 15px;
+				color: #0f1832;
+
+				@media only screen and (max-width: $max-md) {
+					font-size: 26px;
+				}
+
+
+			}
+
+			h3 {
+				font-size: 25px;
+				color: #0f1832;
+
+				@media only screen and (max-width: $max-md) {
+					font-size: 20px;
+				}
+			}
+
+			p {
+				padding: 15px 0;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.intl-tel-input {
+	margin-bottom: 50px;
+
+	.flag-container {
+		top: -12px !important;
+	}
+
+	.selected-flag {
+		background-color: transparent !important;
+		padding-left: 0 !important;
+		color: #0f1832 !important;
+	}
+}
+
+
+.page-template-default {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	ul {
+		margin: 20px;
+	}
+
+	ul {
+		list-style-position: inside;
+		/* Move the bullet inside the list item */
+	}
+
+	li {
+		margin: 10px;
+	}
+}
+
+.section--default {
+	margin-top: 180px;
+}

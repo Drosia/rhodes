@@ -1,0 +1,1 @@
+export const SCROLL_ANIMATION_SPEED = 700;

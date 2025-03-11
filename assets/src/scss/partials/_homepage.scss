@@ -1,0 +1,594 @@
+/* ==========================================================================
+   SCSS Styles [PARTIALS:Homepage]
+   ========================================================================== */
+
+// Hero Content
+.section {
+   &--hero {
+      .container {
+         height: 100%;
+      }
+   }
+}
+
+.hero {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   color: #fff;
+   line-height: 1.1;
+   text-align: center;
+   flex-direction: column;
+
+   &__content {
+      margin-top: auto;
+   }
+
+   h1 {
+      font-size: 54px;
+      margin-bottom: 15px;
+
+      @media only screen and (max-width: $max-md) {
+         font-size: 35px;
+      }
+
+   }
+
+   p {
+      font-size: 19px;
+
+      @media only screen and (max-width: $max-md) {
+         font-size: 18px;
+
+         br {
+            display: none;
+         }
+      }
+   }
+}
+
+.form {
+   &-container {
+      margin-top: auto;
+      margin-bottom: 65px;
+      width: 100%;
+      max-width: 1210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      overflow: hidden;
+
+      @media only screen and (max-width: $max-md) {
+         flex-direction: column;
+         margin-bottom: 20px;
+      }
+   }
+
+   &-column {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      height: 81px;
+      color: #fff;
+      width: 100%;
+      flex-basis: 420px;
+      max-width: 420px;
+      background-color: #fff;
+
+      @media only screen and (max-width: $max-md) {
+         flex-basis: 70px;
+         max-width: 100%;
+         height: auto;
+      }
+
+      &:not(:last-of-type) {
+         border-right: 2px solid rgba(255, 255, 255, 0.3);
+         background-color: rgba(94, 127, 136, .3);
+         backdrop-filter: blur(13px);
+
+         @media only screen and (max-width: $max-md) {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            border-right: none;
+         }
+      }
+
+      &:last-of-type {
+         flex-basis: 320px;
+         max-width: 320px;
+
+         @media only screen and (max-width: $max-md) {
+            flex-basis: 70px;
+            max-width: 100%;
+            height: auto;
+         }
+      }
+
+      label {
+         font-size: 18px;
+         padding-left: 30px;
+         white-space: nowrap;
+      }
+
+      input,
+      select {
+         margin-left: 20px;
+      }
+
+      .arrow-down {
+         margin-right: 50px;
+         flex-shrink: 0;
+      }
+
+
+      input,
+      select {
+         width: 100%;
+         outline: none;
+         border: none;
+         font-size: 18px;
+         line-height: 1;
+         background-color: transparent;
+         color: #c7c7c7;
+         cursor: pointer;
+
+         &[type="submit"] {
+            font-size: 13px;
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            background: none;
+         }
+
+      }
+
+      button {
+         background: transparent;
+         border: none;
+         font-size: 18px;
+         color: #0f1832;
+         text-align: center;
+         margin: 0 auto;
+         cursor: pointer;
+         width: 100%;
+         height: 100%;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+         color: #c7c7c7;
+         /* Light gray */
+         opacity: 1;
+         /* Ensures full visibility in some browsers */
+      }
+
+      /* For better browser support */
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder {
+         color: #c7c7c7;
+      }
+
+      input:-moz-placeholder,
+      textarea:-moz-placeholder {
+         color: #c7c7c7;
+      }
+
+      input::-moz-placeholder,
+      textarea::-moz-placeholder {
+         color: #c7c7c7;
+      }
+
+      input:-ms-input-placeholder,
+      textarea:-ms-input-placeholder {
+         color: #c7c7c7;
+      }
+
+      input[type="date"]::-webkit-calendar-picker-indicator {
+         display: none;
+      }
+
+      input[type="date"]::-moz-calendar-picker-indicator {
+         display: none;
+      }
+
+      input[type="date"]::-ms-clear {
+         display: none;
+      }
+
+      input[type="date"]::-webkit-calendar-picker-indicator {
+         display: none;
+      }
+
+      input[type="date"]::-moz-calendar-picker-indicator {
+         display: none;
+      }
+
+      input[type="date"]::-ms-clear {
+         display: none;
+      }
+
+      /* Hide default select arrow */
+      select {
+         appearance: none;
+         /* Removes default styling in most modern browsers */
+         -webkit-appearance: none;
+         /* For Safari and older versions of Chrome */
+         -moz-appearance: none;
+         /* For Firefox */
+         background-image: none;
+         /* Ensures no background arrow appears */
+      }
+
+      /* Ensure a consistent style */
+      select::-ms-expand {
+         display: none;
+         /* Hides the arrow in Internet Explorer */
+      }
+   }
+}
+
+// Cruise Sections
+.section--cruises {
+   color: #fff;
+   text-align: center;
+   line-height: 1.1;
+   padding-bottom: 135px;
+
+   @media only screen and (max-width: $max-md) {
+      padding-bottom: 60px;
+   }
+
+   &-dark {
+      padding-top: 70px;
+      padding-bottom: 255px;
+
+      .cruise--item {
+         color: #0f1832;
+
+         .btn {
+            text-align: center;
+            background-color: #0f1832;
+            color: #fff;
+         }
+      }
+   }
+}
+
+.cruises {
+   &__top {
+      padding-top: 155px;
+      padding-bottom: 250px;
+
+      @media only screen and (max-width: $max-md) {
+         padding-top: 70px;
+         padding-bottom: 80px;
+      }
+
+      h2 {
+         font-size: 34px;
+         font-weight: 400;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 22px;
+         }
+      }
+
+      p {
+         font-size: 44px;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 28px;
+            margin-top: 4px;
+         }
+      }
+
+      span {
+         display: block;
+         font-size: 17px;
+         color: #c7c7c7;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 15px;
+            margin-top: 2px;
+         }
+      }
+   }
+
+   &__bottom {
+      h2 {
+         font-size: 50px;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 32px;
+         }
+      }
+
+      p {
+         margin-top: 15px;
+         font-size: 16px;
+
+         @media only screen and (max-width: $max-md) {
+            br {
+               display: none;
+            }
+         }
+
+         span {
+            font-size: 14px;
+
+            @media only screen and (max-width: $max-md) {
+               display: block;
+               margin-top: 6px;
+            }
+         }
+      }
+   }
+
+   &--container {
+      margin-top: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 65px;
+      justify-content: center;
+
+      @media only screen and (max-width: $max-md) {
+         flex-direction: column;
+         align-items: center;
+         gap: 50px;
+      }
+   }
+}
+
+.cruise {
+   &--item {
+      color: #fff;
+      flex-basis: 325px;
+      max-width: 325px;
+
+      h3 {
+         font-size: 38px;
+         line-height: 1.1;
+         margin-bottom: 8px;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 32px;
+         }
+      }
+   }
+
+   &-image {
+      border-radius: 9px;
+      overflow: hidden;
+      margin-bottom: 8px;
+   }
+
+   &-excerpt {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 24px;
+   }
+
+   &-duration {
+      display: block;
+      text-align: left;
+      margin-top: 14px;
+      font-size: 15px;
+
+      @media only screen and (max-width: $max-md) {
+         text-align: center;
+      }
+   }
+}
+
+// Section Banner
+
+.section--banner {
+   height: 508px;
+   background-attachment: fixed;
+   &.section--banner-big {
+      height: 647px;
+
+      @media only screen and (max-width: $max-md) {
+         height: 508px;
+      }
+   }
+
+   &.section--banner-472 {
+      height: 472px;
+      margin-top: 90px;
+
+      .banner {
+         color: #0f1832;
+         width: 100%;
+         max-width: 400px;
+         align-items: start;
+      }
+   }
+
+   .container {
+      height: 100%;
+   }
+}
+
+.banner {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+   color: #fff;
+   text-align: center;
+   line-height: 1.1;
+
+   h2 {
+      font-size: 50px;
+
+      @media only screen and (max-width: $max-md) {
+         font-size: 32px;
+      }
+
+   }
+
+   &--content {
+      >span {
+
+         display: block;
+         font-size: 20px;
+         padding-top: 5px;
+
+         @media only screen and (max-width: $max-md) {
+            font-size: 18px;
+         }
+      }
+   }
+
+   .btn {
+      margin-top: 20px;
+   }
+
+}
+
+// Section Locations
+
+.location {
+   &--container {
+      display: flex;
+      gap: 70px;
+      margin-top: -100px;
+
+      @media only screen and (max-width: $max-md) {
+         gap: 20px;
+      }
+
+      flex-wrap: wrap;
+      gap: 65px;
+      justify-content: center;
+
+      @media only screen and (max-width: $max-md) {
+         flex-direction: column;
+         align-items: center;
+         gap: 50px;
+      }
+
+
+   }
+
+   &--item {
+      flex-basis: 324px;
+      max-width: 324px;
+
+      &.archive--items {
+         flex-basis: calc(50% - 70px);
+         max-width: calc(50% - 70px);
+
+         @media only screen and (max-width: $max-md) {
+            flex-basis: calc(50% - 20px);
+            max-width: calc(50% - 20px);
+         }
+
+         @media only screen and (max-width: $max-sm) {
+            flex-basis: 100%;
+            max-width: 100%;
+         }
+      }
+   }
+
+   &-image {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 29px;
+      height: 390px;
+      color: #fff;
+      line-height: 1;
+      text-align: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      h3 {
+         font-size: 29px;
+         margin-bottom: 8px;
+      }
+
+      span {
+         display: block;
+         font-size: 13px;
+      }
+
+      &:after {
+         content: '';
+         position: absolute;
+         bottom: 11px;
+         right: 11px;
+         width: 16px;
+         height: 15px;
+         background-image: url('../images/icons/arrow-white.png');
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 16px 15px;
+      }
+   }
+}
+
+.see-more {
+   display: block;
+   text-align: center;
+   font-size: 13px;
+   text-decoration: underline;
+   margin-top: 25px;
+}
+
+// Simple Text
+.section--simple-text {
+   margin: 140px 0;
+
+   @media only screen and (max-width: $max-md) {
+      margin: 60px 0;
+   }
+}
+
+.simple-text {
+
+   text-align: center;
+
+   h2 {
+      font-size: 54px;
+      line-height: 1.1;
+      color: #0f1832;
+
+      @media only screen and (max-width: $max-md) {
+         font-size: 32px;
+      }
+   }
+
+   >span {
+      margin-top: 5px;
+      display: block;
+      font-size: 16px;
+      line-height: 1;
+      color: rgba(15, 24, 50, 0.7);
+   }
+
+   p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.1;
+      color: #0f1832;
+      letter-spacing: 1.6px;
+
+      @media only screen and (max-width: $max-md) {
+         letter-spacing: 1.2px;
+
+         br {
+            display: none;
+         }
+      }
+   }
+
+   a {
+      margin-top: 20px;
+   }
+}

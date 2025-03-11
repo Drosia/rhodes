@@ -1,0 +1,6 @@
+#editor .is-sidebar-opened .interface-interface-skeleton__sidebar{
+    flex: 0 0 28%;
+}
+#editor .interface-complementary-area {
+    width: 100%;
+}
