@@ -2542,8 +2542,7 @@ html {
       .archive-destinations h2 {
         font-size: 20px; } }
 
-.page-template-page-gallery header,
-.page-template-default header {
+.page-template-page-gallery header {
   background-color: #0f1832; }
 
 .post-type-archive-destination {
@@ -2647,25 +2646,7 @@ html {
   .intl-tel-input .flag-container {
     top: -12px !important; }
   .intl-tel-input .selected-flag {
-    background-color: transparent !important;
-    padding-left: 0 !important;
-    color: #0f1832 !important; }
-
-.page-template-default h1,
-.page-template-default h2,
-.page-template-default h3,
-.page-template-default h4,
-.page-template-default p,
-.page-template-default ul {
-  margin: 20px; }
-.page-template-default ul {
-  list-style-position: inside;
-  /* Move the bullet inside the list item */ }
-.page-template-default li {
-  margin: 10px; }
-
-.section--default {
-  margin-top: 180px; }
+    background-color: transparent !important; }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:Elements]
@@ -2890,8 +2871,8 @@ html {
         .header__left .menu-toggle {
           margin-left: auto; } }
   .header__center {
-    flex-basis: 630px;
-    max-width: 630px; }
+    flex-basis: 560px;
+    max-width: 560px; }
     @media only screen and (max-width: 1024px) {
       .header__center {
         flex-basis: 100%;
@@ -3028,8 +3009,8 @@ html {
   height: 81px;
   color: #fff;
   width: 100%;
-  flex-basis: 420px;
-  max-width: 420px;
+  flex-basis: 386px;
+  max-width: 386px;
   background-color: #fff;
   /* For better browser support */
   /* Hide default select arrow */
@@ -3048,8 +3029,8 @@ html {
         border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         border-right: none; } }
   .form-column:last-of-type {
-    flex-basis: 320px;
-    max-width: 320px; }
+    flex-basis: 438px;
+    max-width: 438px; }
     @media only screen and (max-width: 768px) {
       .form-column:last-of-type {
         flex-basis: 70px;
@@ -3057,8 +3038,7 @@ html {
         height: auto; } }
   .form-column label {
     font-size: 18px;
-    padding-left: 30px;
-    white-space: nowrap; }
+    padding-left: 30px; }
   .form-column input,
   .form-column select {
     margin-left: 20px; }
@@ -3252,7 +3232,8 @@ html {
       color: #0f1832;
       width: 100%;
       max-width: 400px;
-      align-items: start; }
+      align-items: start;
+      text-align: left; }
   .section--banner .container {
     height: 100%; }
 
@@ -3596,16 +3577,10 @@ html {
 .footer--outer {
   padding: 50px 0;
   text-align: center;
-  color: #ffffff;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center; }
+  color: #ffffff; }
   @media only screen and (max-width: 768px) {
     .footer--outer {
-      padding: 25px 0;
-      flex-direction: column; } }
+      padding: 25px 0; } }
 .footer__copyright {
   letter-spacing: 1px;
   font-size: 10px;
@@ -3616,21 +3591,6 @@ html {
   padding-top: 4px;
   font-size: 8px;
   line-height: 1; }
-.footer--txt {
-  margin-right: auto; }
-  @media only screen and (max-width: 768px) {
-    .footer--txt {
-      margin-right: unset; } }
-.footer--logo {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  margin-right: auto; }
-  @media only screen and (max-width: 768px) {
-    .footer--logo {
-      margin-right: unset; } }
-  .footer--logo img {
-    max-width: 34px; }
 .footer--col-1 {
   text-align: left; }
   @media only screen and (max-width: 768px) {
