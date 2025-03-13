@@ -2545,7 +2545,7 @@ html {
         font-size: 20px; } }
 
 .page-template-page-gallery header,
-.page-template-default header {
+.page-template-default header, .page-template-page-faq header {
   background-color: #0f1832; }
 
 .post-type-archive-destination {
@@ -3641,70 +3641,65 @@ button-widget {
   display: block; }
 
 .section--faq {
-  padding: 80px 0; }
+  margin: 130px 0 150px;
+  background-color: #f9f9f9; }
   @media (max-width: 768px) {
     .section--faq {
-      padding: 40px 0; } }
-
-.faq-header {
-  text-align: center;
-  margin-bottom: 60px; }
-  @media (max-width: 768px) {
-    .faq-header {
-      margin-bottom: 40px; } }
-.faq-title {
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: black; }
-.faq-subtitle {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 0;
-  color: black; }
-  @media (max-width: 768px) {
-    .faq-subtitle {
-      font-size: 32px; } }
-.faq-items {
-  max-width: 800px;
-  margin: 0 auto; }
-.faq-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-  .faq-item:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); }
-.faq-question {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: 20px;
-  color: black;
-  transition: color 0.3s ease; }
-  .faq-question:hover {
-    color: red; }
-  .faq-question .icon-arrow {
-    transition: transform 0.3s ease; }
-  .faq-question[aria-expanded="true"] .icon-arrow {
-    transform: rotate(180deg); }
-  @media (max-width: 768px) {
-    .faq-question {
-      font-size: 18px;
-      padding: 20px 0; } }
-.faq-answer {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease; }
-  .faq-answer__content {
-    padding-bottom: 24px;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 16px;
-    line-height: 1.6; }
-    .faq-answer__content p:last-child {
-      margin-bottom: 0; }
+      margin: 120px 0; } }
+  .section--faq .faq-header {
+    text-align: center;
+    margin-bottom: 60px; }
+    .section--faq .faq-header .faq-title {
+      font-size: 90px;
+      line-height: 1.1;
+      color: #0f1832; }
+      @media (max-width: 768px) {
+        .section--faq .faq-header .faq-title {
+          font-size: 26px; } }
+    .section--faq .faq-header .faq-subtitle {
+      font-size: 44px;
+      color: rgba(15, 24, 50, 0.7);
+      line-height: 1.2; }
+      @media (max-width: 768px) {
+        .section--faq .faq-header .faq-subtitle {
+          font-size: 20px; }
+          .section--faq .faq-header .faq-subtitle br {
+            display: none; } }
+  .section--faq .faq-items {
+    max-width: 800px;
+    margin: 0 auto; }
+    .section--faq .faq-items .faq-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 20px 0; }
+      .section--faq .faq-items .faq-item:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.1); }
+      .section--faq .faq-items .faq-item .faq-question {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        background: #0f1832;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        transition: background 0.3s ease; }
+        .section--faq .faq-items .faq-item .faq-question .icon-arrow {
+          transition: transform 0.3s ease; }
+        .section--faq .faq-items .faq-item .faq-question[aria-expanded="true"] .icon-arrow {
+          transform: rotate(180deg); }
+      .section--faq .faq-items .faq-item .faq-answer {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease; }
+        .section--faq .faq-items .faq-item .faq-answer__content {
+          padding: 16px 0;
+          color: rgba(0, 0, 0, 0.7);
+          font-size: 16px;
+          line-height: 1.5; }
+          .section--faq .faq-items .faq-item .faq-answer__content p:last-child {
+            margin-bottom: 0; }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:FOOTER]

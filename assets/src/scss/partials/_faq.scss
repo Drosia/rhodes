@@ -1,100 +1,95 @@
 // FAQ Page Styles
 .section--faq {
-    padding: 80px 0;
+    margin: 130px 0 150px;
+    background-color: #f9f9f9; // Light background for contrast
 
     @media (max-width: $max-md) {
-        padding: 40px 0;
+        margin: 120px 0;
     }
-}
 
-.faq {
-    &-header {
+    .faq-header {
         text-align: center;
         margin-bottom: 60px;
 
-        @media (max-width: $max-md) {
-            margin-bottom: 40px;
+        .faq-title {
+            font-size: 90px;
+            line-height: 1.1;
+            color: #0f1832;
+            @media (max-width: $max-md) {
+                font-size: 26px;
+            }
+
+        }
+
+        .faq-subtitle {
+            font-size: 44px;
+            color: rgba(15, 24, 50, 0.7);
+            line-height: 1.2;
+            @media (max-width: $max-md) {
+                font-size: 20px;
+                br{
+                    display: none;
+                }
+            }
         }
     }
 
-    &-title {
-        font-size: 24px;
-        margin-bottom: 16px;
-        color: black;
-    }
-
-    &-subtitle {
-        font-size: 48px;
-        line-height: 1.2;
-        margin-bottom: 0;
-        color: black;
-
-        @media (max-width: $max-md) {
-            font-size: 32px;
-        }
-    }
-
-    &-items {
+    .faq-items {
         max-width: 800px;
         margin: 0 auto;
-    }
 
-    &-item {
-        border-bottom: 1px solid rgba(black, 0.1);
-
-        &:first-child {
-            border-top: 1px solid rgba(black, 0.1);
-        }
-    }
-
-    &-question {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 0;
-        background: none;
-        border: none;
-        cursor: pointer;
-        text-align: left;
-        font-size: 20px;
-        color: black;
-        transition: color 0.3s ease;
-
-        &:hover {
-            color: red;
-        }
-
-        .icon-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        &[aria-expanded="true"] {
-            .icon-arrow {
-                transform: rotate(180deg);
-            }
-        }
-
-        @media (max-width: $max-md) {
-            font-size: 18px;
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             padding: 20px 0;
-        }
-    }
 
-    &-answer {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
+            &:first-child {
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+            }
 
-        &__content {
-            padding-bottom: 24px;
-            color: rgba(black, 0.8);
-            font-size: 16px;
-            line-height: 1.6;
+            .faq-question {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px;
+                background: #0f1832;
+                border: none;
+                cursor: pointer;
+                font-size: 18px;
+                color: #fff;
+                transition: background 0.3s ease;
 
-            p:last-child {
-                margin-bottom: 0;
+                // &:hover {
+                //     background: #eaeaea; // Light hover effect
+                // }
+
+                .icon-arrow {
+                    transition: transform 0.3s ease;
+                }
+
+                &[aria-expanded="true"] {
+                    .icon-arrow {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .faq-answer {
+                height: 0;
+                overflow: hidden;
+                transition: height 0.3s ease;
+
+                &__content {
+                    padding: 16px 0;
+                    color: rgba(0, 0, 0, 0.7);
+                    font-size: 16px;
+                    line-height: 1.5;
+
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             }
         }
     }
-} 
+}
