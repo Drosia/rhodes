@@ -2513,6 +2513,8 @@ html {
 
 .container--header {
   max-width: 1280px; }
+.container--no-padding {
+  padding: 0; }
 
 .section {
   position: relative; }
@@ -2706,6 +2708,12 @@ button-widget {
 
 .section--free-text {
   margin-top: 60px; }
+
+.section-image-gallery {
+  margin-bottom: 100px; }
+  @media only screen and (max-width: 768px) {
+    .section-image-gallery {
+      margin-bottom: 50px; } }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:Elements]
@@ -2931,8 +2939,8 @@ button-widget {
     .header__right {
       display: none; } }
   .header__left {
-    flex-basis: 140px;
-    max-width: 140px; }
+    flex-basis: 55px;
+    max-width: 55px; }
     @media only screen and (max-width: 1024px) {
       .header__left {
         flex-basis: 100%;
@@ -3297,13 +3305,31 @@ button-widget {
         height: 508px; } }
   .section--banner.section--banner-472 {
     height: 472px;
-    margin-top: 90px; }
+    padding-top: 90px;
+    background-position: center 31%; }
+    @media only screen and (max-width: 768px) {
+      .section--banner.section--banner-472 {
+        background: none;
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px; } }
+    .section--banner.section--banner-472 .btn {
+      display: none; }
+      @media only screen and (max-width: 768px) {
+        .section--banner.section--banner-472 .btn {
+          display: block; } }
     .section--banner.section--banner-472 .banner {
       color: #0f1832;
       width: 100%;
       max-width: 400px;
       align-items: start;
       text-align: left; }
+      @media only screen and (max-width: 768px) {
+        .section--banner.section--banner-472 .banner {
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto;
+          text-align: center; } }
   .section--banner .container {
     height: 100%; }
 
@@ -3439,10 +3465,12 @@ button-widget {
    ========================================================================== */
 .section--services {
   background-color: #0f1832;
-  padding-bottom: 80px; }
+  padding-bottom: 80px;
+  padding-top: 80px; }
   @media only screen and (max-width: 768px) {
     .section--services {
-      padding-bottom: 50px; } }
+      padding-bottom: 50px;
+      padding-top: 50px; } }
   .section--services .service-button {
     margin-top: 96px; }
     @media only screen and (max-width: 768px) {
@@ -3453,7 +3481,7 @@ button-widget {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px; }
 
 .service {
@@ -3611,6 +3639,72 @@ button-widget {
 .grid-item img {
   width: 100%;
   display: block; }
+
+.section--faq {
+  padding: 80px 0; }
+  @media (max-width: 768px) {
+    .section--faq {
+      padding: 40px 0; } }
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 60px; }
+  @media (max-width: 768px) {
+    .faq-header {
+      margin-bottom: 40px; } }
+.faq-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: black; }
+.faq-subtitle {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 0;
+  color: black; }
+  @media (max-width: 768px) {
+    .faq-subtitle {
+      font-size: 32px; } }
+.faq-items {
+  max-width: 800px;
+  margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .faq-item:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease; }
+  .faq-question:hover {
+    color: red; }
+  .faq-question .icon-arrow {
+    transition: transform 0.3s ease; }
+  .faq-question[aria-expanded="true"] .icon-arrow {
+    transform: rotate(180deg); }
+  @media (max-width: 768px) {
+    .faq-question {
+      font-size: 18px;
+      padding: 20px 0; } }
+.faq-answer {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease; }
+  .faq-answer__content {
+    padding-bottom: 24px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 16px;
+    line-height: 1.6; }
+    .faq-answer__content p:last-child {
+      margin-bottom: 0; }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:FOOTER]

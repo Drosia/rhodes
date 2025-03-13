@@ -10,6 +10,7 @@
 		$image = get_sub_field('image');
 		$title = get_sub_field('title');
 		$text = get_sub_field('text');
+		$button = get_sub_field('button');
         // If all fields are empty, skip this iteration
         if (empty($image) && empty($title) && empty($text)) {
             continue;
@@ -25,6 +26,9 @@
 						<?php if( $text) : ?>
 							<span> <?= $text ?></span>
 						<?php endif; ?>
+						<?php if( $button) : ?>
+							<a href="<?= $button['url'] ?>" class="btn btn--200"> <span><?= $button['title'] ?></span></a>
+						<?php endif; ?>	
 					</div>
 				</div>
 			</div>

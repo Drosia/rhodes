@@ -383,6 +383,7 @@
 
 .section--banner {
    height: 508px;
+
    //background-attachment: fixed;
    &.section--banner-big {
       height: 647px;
@@ -394,7 +395,23 @@
 
    &.section--banner-472 {
       height: 472px;
-      margin-top: 90px;
+      padding-top: 90px;
+      background-position: center 31%;
+
+      @media only screen and (max-width: $max-md) {
+         background: none;
+         height: 100%;
+         padding-top: 50px;
+         padding-bottom: 50px;
+      }
+
+      .btn {
+         display: none;
+
+         @media only screen and (max-width: $max-md) {
+            display: block;
+         }
+      }
 
       .banner {
          color: #0f1832;
@@ -402,6 +419,14 @@
          max-width: 400px;
          align-items: start;
          text-align: left;
+
+         @media only screen and (max-width: $max-md) {
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            text-align: center;
+         }
+
       }
    }
 

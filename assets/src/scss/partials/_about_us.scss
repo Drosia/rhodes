@@ -5,8 +5,10 @@
 .section--services {
    background-color: #0f1832;
    padding-bottom: 80px;
+   padding-top: 80px;
    @media only screen and (max-width: $max-md) {
       padding-bottom: 50px;
+      padding-top: 50px;
    }
    .service-button {
       margin-top: 96px;
@@ -20,7 +22,7 @@
    display: flex;
    flex-wrap: wrap;
    align-items: center;
-   justify-content: center;
+   justify-content: space-between;
    gap: 40px;
 }
 

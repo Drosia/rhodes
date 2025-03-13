@@ -5,7 +5,7 @@
 
 ?>
 <section class="section section--cruise">
-    <div class="container">
+    <div class="container container--no-padding">
         <div class="cruise--wrapper">
             <div class="cruise__left">
                 <div class="cruise--the-content">

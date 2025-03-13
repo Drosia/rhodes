@@ -104,7 +104,28 @@ class Global {
         $('.wpcf7-form select').each(function () {
           $(this).find('option:first').attr("disabled", "disabled");
         });
-      }
+      } // FAQ Accordion
+
+
+      $('.faq-question').on('click', function () {
+        const $answer = $(this).next('.faq-answer');
+        const isExpanded = $(this).attr('aria-expanded') === 'true'; // Close all other answers
+
+        $('.faq-question').not(this).each(function () {
+          if ($(this).attr('aria-expanded') === 'true') {
+            $(this).attr('aria-expanded', 'false');
+            $(this).next('.faq-answer').css('height', '0');
+          }
+        }); // Toggle current answer
+
+        $(this).attr('aria-expanded', !isExpanded);
+
+        if (!isExpanded) {
+          $answer.css('height', $answer.find('.faq-answer__content').outerHeight() + 'px');
+        } else {
+          $answer.css('height', '0');
+        }
+      });
     });
   }
 

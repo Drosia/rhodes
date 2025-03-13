@@ -10,7 +10,8 @@
 		$image = get_sub_field('background_image');
 		$title = get_sub_field('title');
 		$text = get_sub_field('text');
-        if ( empty($image) && empty($title) && empty($text) ) {
+		$button = get_sub_field('button');
+        if ( empty($image) && empty($title) && empty($text) && empty($button) ) {
             continue;
         }
 	?>
@@ -24,6 +25,9 @@
 						<?php if( $text) : ?>
 							<span> <?= $text ?></span>
 						<?php endif; ?>
+						<?php if( $button) : ?>
+							<a href="<?= $button['url'] ?>" class="btn btn--blue btn--200"> <span><?= $button['title'] ?></span></a>
+						<?php endif; ?>	
 					</div>
 				</div>
 			</div>

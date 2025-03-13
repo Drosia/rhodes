@@ -31,6 +31,9 @@ html {
 	&--header {
 		max-width: 1280px;
 	}
+	&--no-padding{
+		padding: 0;
+	}
 }
 
 .section {
@@ -309,4 +312,10 @@ button-widget{
 }
 .section--free-text{
 	margin-top: 60px;
+}
+.section-image-gallery{
+	margin-bottom: 100px;
+	@media only screen and (max-width: $max-md) {
+		margin-bottom: 50px;
+	}
 }

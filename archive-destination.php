@@ -35,7 +35,7 @@ get_header(); ?>
                             <div class="location--item archive--items">
                                 <a href="<?php the_permalink(); ?>" class="location-link">
                                     <?php if (has_post_thumbnail()) : ?>
-                                        <div class="location-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>')">
+                                        <div class="location-image background-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>')">
                                             <h3 class="location-title"><?php the_title(); ?></h3>
                                             <?php if (has_excerpt()) : ?>
                                                 <span class="location-excerpt"><?php the_excerpt(); ?></span>
