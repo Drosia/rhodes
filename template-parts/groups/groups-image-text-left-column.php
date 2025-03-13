@@ -14,7 +14,7 @@
             continue;
         }
 	?>
-		<section class="section section--banner section--banner-472  background-image" style="background-image: url('<?php echo $image; ?>');">
+		<section class="section section--banner section--banner-472  background-image no-shadow" style="background-image: url('<?php echo $image; ?>');">
 			<div class="container">
 				<div class="banner">
 					<div class="banner__content">

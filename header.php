@@ -63,15 +63,11 @@
 									'menu_class' => 'menu-list menu-list--simple',   // Add a CSS class to the <ul> element
 								));
 								?>
-								<div class="btn btn--200">
-									<span>BOOK A CRUISE</span>
-								</div>
+							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
 							</div><!-- /.header-menu-wrapper -->
 						</div>
 						<div class="header__right">
-							<div class="btn btn--icon-white">
-								<span>BOOK A CRUISE</span>
-							</div>
+							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
 						</div>
 					</div>
 				</div>

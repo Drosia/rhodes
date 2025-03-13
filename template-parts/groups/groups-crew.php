@@ -10,8 +10,10 @@
             $background_image = get_sub_field('background_image');
             $crew_image = get_sub_field('crew_image');
             $title = get_sub_field('title');
+            $subtitle = get_sub_field('subtitle');
             $text = get_sub_field('text');
             $button = get_sub_field('button');
+            $section_title = get_sub_field('section_title');
             
             // Check if the content is empty before rendering
             if (empty($title) && empty($text) && empty($button) && empty($crew_image) && empty($background_image)) {
@@ -21,7 +23,7 @@
 
         ?>
         
-        <section class="section section--crew background-image" style="background-image: url('<?php echo $background_image['url']; ?>');">
+        <section class="section section--crew background-image no-shadow" style="background-image: url('<?php echo $background_image['url']; ?>');">
             <div class="container">
                 <div class="crew--wrapper">
                     <?php if ( ! empty($crew_image) ) : ?>
@@ -32,6 +34,9 @@
                         </div>
                     <?php endif; ?>
                     <div class="crew__right">
+                        <?php if( $subtitle) : ?>
+                            <h3> <?= $subtitle ?></h3>
+                        <?php endif; ?>
                         <?php if( $title) : ?>
                             <h2> <?= $title ?></h2>
                         <?php endif; ?>

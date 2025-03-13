@@ -2542,7 +2542,8 @@ html {
       .archive-destinations h2 {
         font-size: 20px; } }
 
-.page-template-page-gallery header {
+.page-template-page-gallery header,
+.page-template-default header {
   background-color: #0f1832; }
 
 .post-type-archive-destination {
@@ -2600,9 +2601,32 @@ html {
       margin-bottom: 40px; } }
   .destination-content.image-right {
     flex-direction: row-reverse; }
+    .destination-content.image-right .destination-content__text {
+      text-align: right; }
+      @media only screen and (max-width: 768px) {
+        .destination-content.image-right .destination-content__text {
+          text-align: center; } }
     .destination-content.image-right img {
       margin-left: auto;
       display: block; }
+    .destination-content.image-right .btn {
+      margin-left: auto;
+      margin-right: 0; }
+      @media only screen and (max-width: 768px) {
+        .destination-content.image-right .btn {
+          margin-right: auto; } }
+  .destination-content.no-image {
+    display: block; }
+    .destination-content.no-image .destination-content__text {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center !important; }
+  .destination-content.image-left .destination-content__text {
+    text-align: left; }
+    @media only screen and (max-width: 768px) {
+      .destination-content.image-left .destination-content__text {
+        text-align: center; } }
   .destination-content__image {
     flex-basis: 500px;
     max-width: 500px; }
@@ -2611,7 +2635,14 @@ html {
         flex-basis: 100%;
         max-width: 100%; } }
     .destination-content__image img {
-      width: 100%; }
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden; }
+  .destination-content .btn {
+    margin-left: 0; }
+    @media only screen and (max-width: 768px) {
+      .destination-content .btn {
+        margin-left: auto; } }
   .destination-content__text {
     flex-basis: 500px;
     max-width: 500px;
@@ -2646,7 +2677,35 @@ html {
   .intl-tel-input .flag-container {
     top: -12px !important; }
   .intl-tel-input .selected-flag {
-    background-color: transparent !important; }
+    background-color: transparent !important;
+    padding-left: 0;
+    padding-right: 10px; }
+
+.page-template-default h1,
+.page-template-default h2,
+.page-template-default h3,
+.page-template-default h4,
+.page-template-default p,
+.page-template-default ul {
+  margin: 20px; }
+.page-template-default ul {
+  list-style-position: inside;
+  /* Move the bullet inside the list item */ }
+.page-template-default li {
+  margin: 10px; }
+
+.section--default {
+  margin-top: 230px; }
+  @media only screen and (max-width: 768px) {
+    .section--default {
+      margin-top: 130px; } }
+
+button-widget {
+  position: relative;
+  z-index: 999999999999; }
+
+.section--free-text {
+  margin-top: 60px; }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:Elements]
@@ -2658,6 +2717,20 @@ html {
   position: relative; }
   .background-image__full {
     height: 100vh; }
+  .background-image.no-shadow:after {
+    display: none; }
+  .background-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0; }
+  .background-image > * {
+    position: relative;
+    z-index: 2; }
 
 .arrow-down {
   display: block;
@@ -2700,7 +2773,7 @@ html {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1; }
 
 .form-wrapper {
@@ -2871,8 +2944,8 @@ html {
         .header__left .menu-toggle {
           margin-left: auto; } }
   .header__center {
-    flex-basis: 560px;
-    max-width: 560px; }
+    flex-basis: 615px;
+    max-width: 615px; }
     @media only screen and (max-width: 1024px) {
       .header__center {
         flex-basis: 100%;
@@ -2886,9 +2959,10 @@ html {
         transition: all 400ms linear; } }
     .header__center.active {
       transform: translateX(1024px); }
-      .header__center.active .btn {
-        display: block; }
-    .header__center .btn {
+      .header__center.active button-widget {
+        display: flex;
+        justify-content: center; }
+    .header__center button-widget {
       display: none; }
   .header__top {
     margin-top: 30px;
@@ -2998,7 +3072,7 @@ html {
   justify-content: center;
   border-radius: 10px;
   overflow: hidden; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     .form-container {
       flex-direction: column;
       margin-bottom: 20px; } }
@@ -3015,7 +3089,7 @@ html {
   /* For better browser support */
   /* Hide default select arrow */
   /* Ensure a consistent style */ }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1024px) {
     .form-column {
       flex-basis: 70px;
       max-width: 100%;
@@ -3024,18 +3098,15 @@ html {
     border-right: 2px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(94, 127, 136, 0.3);
     backdrop-filter: blur(13px); }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1024px) {
       .form-column:not(:last-of-type) {
         border-bottom: 2px solid rgba(255, 255, 255, 0.3);
         border-right: none; } }
-  .form-column:last-of-type {
-    flex-basis: 438px;
-    max-width: 438px; }
-    @media only screen and (max-width: 768px) {
-      .form-column:last-of-type {
-        flex-basis: 70px;
-        max-width: 100%;
-        height: auto; } }
+  @media only screen and (max-width: 1024px) {
+    .form-column:last-of-type {
+      flex-basis: 70px;
+      max-width: 100%;
+      height: auto; } }
   .form-column label {
     font-size: 18px;
     padding-left: 30px; }
@@ -3218,8 +3289,7 @@ html {
       text-align: center; } }
 
 .section--banner {
-  height: 508px;
-  background-attachment: fixed; }
+  height: 508px; }
   .section--banner.section--banner-big {
     height: 647px; }
     @media only screen and (max-width: 768px) {
@@ -3309,7 +3379,7 @@ html {
   .location-image span {
     display: block;
     font-size: 13px; }
-  .location-image:after {
+  .location-image:before {
     content: '';
     position: absolute;
     bottom: 11px;
@@ -3319,7 +3389,8 @@ html {
     background-image: url("../images/icons/arrow-white.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 16px 15px; }
+    background-size: 16px 15px;
+    z-index: 2; }
 
 .see-more {
   display: block;
@@ -3417,10 +3488,10 @@ html {
         font-size: 14px; } }
 
 .section--crew {
-  padding: 115px 0 160px; }
+  padding: 75px 0 160px; }
   @media only screen and (max-width: 768px) {
     .section--crew {
-      padding: 60px 0 60px; } }
+      padding: 40px 0 60px; } }
 
 .crew--wrapper {
   display: flex;
@@ -3449,6 +3520,11 @@ html {
   @media only screen and (max-width: 768px) {
     .crew__right {
       text-align: center; } }
+  .crew__right h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 1;
+    color: rgba(15, 24, 50, 0.7); }
   .crew__right h2 {
     font-size: 56px;
     line-height: 1.1;
@@ -3480,10 +3556,6 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 50px; }
-.cruise__left {
-  flex-basis: 743px;
-  max-width: 743px;
-  margin: 0 auto; }
 .cruise__right {
   flex-basis: 315px;
   max-width: 315px;
@@ -3577,10 +3649,31 @@ html {
 .footer--outer {
   padding: 50px 0;
   text-align: center;
-  color: #ffffff; }
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px; }
   @media only screen and (max-width: 768px) {
     .footer--outer {
-      padding: 25px 0; } }
+      padding: 25px 0;
+      flex-direction: column; } }
+.footer--logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: auto; }
+  @media only screen and (max-width: 768px) {
+    .footer--logo {
+      margin-right: 0; } }
+  .footer--logo img {
+    max-width: 32px; }
+.footer--txt {
+  margin-right: auto; }
+  @media only screen and (max-width: 768px) {
+    .footer--txt {
+      margin-right: 0; } }
 .footer__copyright {
   letter-spacing: 1px;
   font-size: 10px;
@@ -3704,9 +3797,6 @@ html {
       .pre_footer p {
         font-size: 18px;
         text-align: center; } }
-    @media only screen and (max-width: 1366px) {
-      .pre_footer p br {
-        display: none; } }
 
 .submit--row {
   display: flex;

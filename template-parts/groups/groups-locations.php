@@ -28,7 +28,7 @@
                                 <div class="location--item">
                                     <a href="<?= esc_url($location_permalink); ?>" class="location-link">
                                         <?php if ($location_thumb) : ?>
-                                            <div class="location-image" style="background-image:url('<?= $location_thumb ?>')">
+                                            <div class="location-image background-image" style="background-image:url('<?= $location_thumb ?>')">
 												<h3 class="location-title"><?= esc_html($location_title); ?></h3>
 												<?php if ($location_excerpt) : ?>
 													<span class="location-excerpt"><?= esc_html($location_excerpt); ?></span>

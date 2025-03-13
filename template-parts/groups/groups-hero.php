@@ -32,7 +32,8 @@
 						<?php endif; ?>
 					</div>
 					<?php if ( $show_form_on_hero_section ) : ?>
-						<form class="form-container">
+						<button-widget class="form-container" widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
+						<!-- <form class="form-container">
 							<div class="form-column">
 								<label for="date">Date</label>
 								<input type="date" class="js-date" id="date" name="date" required>
@@ -68,7 +69,7 @@
 							<div class="form-column form-column--submit">
 								<button type="submit">Check Availability</button>
 							</div>
-						</form>
+						</form> -->
 					<?php endif; ?>
 				</div>
 			</div>

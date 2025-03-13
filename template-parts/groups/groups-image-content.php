@@ -25,6 +25,10 @@
 
 						// Determine if this is an odd or even row
 						$layout_class = ($row_index % 2 == 0) ? 'image-left' : 'image-right';
+						// Add no-image class if there's no image
+						if (empty($image_id)) {
+							$layout_class .= ' no-image';
+						}
 						?>
 
 						<div class="destination-content <?= esc_attr($layout_class); ?>">

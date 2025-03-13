@@ -93,6 +93,7 @@ module.exports = function (grunt) {
 						`${JS_VENDOR}/masonry.min.js`,
 						`${JS_VENDOR}/imagesloaded.pkgd.min.js`,
 						`${JS_VENDOR}/lightbox.js`,
+						`${JS_VENDOR}/booking.js`,
 					],
 					[`${JS_DIST}/app.js`]: [`${JS_DIST}/app.js`]
 				}

@@ -11,6 +11,9 @@
                 <div class="cruise--the-content">
                     <?php echo the_content(); ?>
                 </div>
+                <?php
+                /*
+                <!-- START comment out this  -->
                 <?php if( have_rows('services') ): ?>
                     <ul class="cruise--services">
                         <?php while( have_rows('services') ): the_row(); 
@@ -54,7 +57,12 @@
                             </div>
                     <?php endif; ?>                    
                 </div>
+                */ ?>
+                <!-- END comment out this  -->
             </div>
+            <!-- START comment out this  -->
+            <?php
+                /*
             <div class="cruise__right">
                 <div class="form-wrapper form-wrapper--simple">
                     <form>
@@ -85,6 +93,8 @@
 					</form>
                 </div>
             </div>
+            */ ?>
+            <!-- END comment out this  -->
         </div>
     </div>
 </section>

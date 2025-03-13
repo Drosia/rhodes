@@ -1,0 +1,13 @@
+// Destination Content - No Image
+.destination-content {
+    &.no-image {
+        display: block;
+
+        .destination-content__text {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+} 

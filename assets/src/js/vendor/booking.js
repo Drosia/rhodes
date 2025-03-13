@@ -1,0 +1,1 @@
+(e=>{document.readyState==="complete"||document.readyState==="interactive"?e():document.addEventListener("DOMContentLoaded",d=>{e()})})(()=>{let e=document.createElement("script");e.type="module",e.src="https://widgets.regiondo.net/button/v1/button-widget.main.js",document.body.appendChild(e)});

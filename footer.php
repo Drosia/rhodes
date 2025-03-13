@@ -89,8 +89,6 @@
 
 	<?php wp_footer(); ?>
 	<button-widget widget-id="c1eb5c90-33a8-40fd-b99f-f3e5e74d7a49"></button-widget>
-	<script type="text/javascript" src="https://widgets.regiondo.net/button/v1/button-widget.min.js"></script>
-
 </body>
 
 </html>

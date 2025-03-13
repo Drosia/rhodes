@@ -73,7 +73,8 @@ html {
 
 }
 
-.page-template-page-gallery {
+.page-template-page-gallery,
+.page-template-default {
 	header {
 		background-color: #0f1832;
 	}
@@ -156,9 +157,43 @@ html {
 		&.image-right {
 			flex-direction: row-reverse;
 
+			.destination-content__text {
+				text-align: right;
+				@media only screen and (max-width: $max-md) {
+					text-align: center;
+				}
+			}
+
 			img {
 				margin-left: auto;
 				display: block;
+			}
+
+			.btn{
+				margin-left: auto;
+				margin-right: 0;
+				@media only screen and (max-width: $max-md) {
+					margin-right: auto;
+				}
+			}
+
+		}
+		&.no-image {
+			display: block;
+
+			.destination-content__text {
+				width: 100%;
+				max-width: 100%;
+				margin: 0 auto;
+				text-align: center !important;
+			}
+		}
+		&.image-left {
+			.destination-content__text {
+				text-align: left;
+				@media only screen and (max-width: $max-md) {
+					text-align: center;
+				}
 			}
 		}
 
@@ -173,9 +208,16 @@ html {
 
 			img {
 				width: 100%;
+				border-radius: 12px;
+				overflow: hidden;
 			}
 		}
-
+		.btn{
+			margin-left: 0;
+			@media only screen and (max-width: $max-md) {
+				margin-left: auto;
+			}
+		}
 		&__text {
 			flex-basis: 500px;
 			max-width: 500px;
@@ -228,5 +270,43 @@ html {
 
 	.selected-flag {
 		background-color: transparent !important;
+		padding-left: 0;
+		padding-right: 10px;
 	}
+}
+
+.page-template-default {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	ul {
+		margin: 20px;
+	}
+
+	ul {
+		list-style-position: inside;
+		/* Move the bullet inside the list item */
+	}
+
+	li {
+		margin: 10px;
+	}
+}
+
+.section--default {
+	margin-top: 230px;
+
+	@media only screen and (max-width: $max-md) {
+		margin-top: 130px;
+	}
+}
+button-widget{
+	position: relative;
+	z-index: 999999999999;
+}
+.section--free-text{
+	margin-top: 60px;
 }

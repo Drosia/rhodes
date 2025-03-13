@@ -106,6 +106,26 @@
             ]
         },
         {
+            "key": "field_67d29867a86af",
+            "label": "Free Text",
+            "name": "free_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
             "key": "field_67bf51588787e",
             "label": "Cruises",
             "name": "cruises",
@@ -350,5 +370,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1740595356
+    "modified": 1741854850
 }

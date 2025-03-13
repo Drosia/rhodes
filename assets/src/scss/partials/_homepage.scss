@@ -60,7 +60,7 @@
       border-radius: 10px;
       overflow: hidden;
 
-      @media only screen and (max-width: $max-md) {
+      @media only screen and (max-width: $max-lg) {
          flex-direction: column;
          margin-bottom: 20px;
       }
@@ -77,7 +77,7 @@
       max-width: 386px;
       background-color: #fff;
 
-      @media only screen and (max-width: $max-md) {
+      @media only screen and (max-width: $max-lg) {
          flex-basis: 70px;
          max-width: 100%;
          height: auto;
@@ -88,17 +88,16 @@
          background-color: rgba(94, 127, 136, .3);
          backdrop-filter: blur(13px);
 
-         @media only screen and (max-width: $max-md) {
+         @media only screen and (max-width: $max-lg) {
             border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             border-right: none;
          }
       }
 
       &:last-of-type {
-         flex-basis: 438px;
-         max-width: 438px;
 
-         @media only screen and (max-width: $max-md) {
+
+         @media only screen and (max-width: $max-lg) {
             flex-basis: 70px;
             max-width: 100%;
             height: auto;
@@ -384,7 +383,7 @@
 
 .section--banner {
    height: 508px;
-   background-attachment: fixed;
+   //background-attachment: fixed;
    &.section--banner-big {
       height: 647px;
 
@@ -518,7 +517,7 @@
          font-size: 13px;
       }
 
-      &:after {
+      &:before {
          content: '';
          position: absolute;
          bottom: 11px;
@@ -529,6 +528,7 @@
          background-position: center;
          background-repeat: no-repeat;
          background-size: 16px 15px;
+         z-index: 2;
       }
    }
 }
