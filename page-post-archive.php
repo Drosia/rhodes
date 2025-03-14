@@ -58,143 +58,85 @@ $categories = get_categories(array(
     'hide_empty' => true
 ));
 ?>
-
-<div class="container">
-    <div class="archive-header fade-in">
-        <h1><?php echo esc_html($archive_title); ?></h1>
-        <?php if ($archive_description): ?>
-            <p><?php echo esc_html($archive_description); ?></p>
+<section class="section section-post-archive">
+    <div class="container">
+        <div class="archive-header fade-in">
+            <h1><?php echo esc_html($archive_title); ?></h1>
+            <?php if ($archive_description): ?>
+                <p><?php echo esc_html($archive_description); ?></p>
+            <?php endif; ?>
+        </div>
+        
+        <?php if ($show_filters && !empty($categories)): ?>
+        <div class="archive-filters slide-up">
+            <button class="filter-button active" data-category="all">All</button>
+            <?php foreach ($categories as $category): ?>
+                <button class="filter-button" data-category="<?php echo esc_attr($category->slug); ?>">
+                    <?php echo esc_html($category->name); ?>
+                </button>
+            <?php endforeach; ?>
+        </div>
         <?php endif; ?>
-    </div>
-    
-    <?php if ($show_filters && !empty($categories)): ?>
-    <div class="archive-filters slide-up">
-        <button class="filter-button active" data-category="all">All</button>
-        <?php foreach ($categories as $category): ?>
-            <button class="filter-button" data-category="<?php echo esc_attr($category->slug); ?>">
-                <?php echo esc_html($category->name); ?>
-            </button>
-        <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
-    
-    <div class="archive-grid">
-        <?php if ($featured_post): ?>
-            <article class="archive-grid__featured fade-in">
-                <?php if (has_post_thumbnail($featured_post->ID)): ?>
-                    <img src="<?php echo get_the_post_thumbnail_url($featured_post->ID, 'large'); ?>" 
-                         alt="<?php echo esc_attr($featured_post->post_title); ?>" 
-                         class="archive-grid__featured-image">
-                <?php endif; ?>
-                
-                <div class="archive-grid__featured-content">
-                    <?php
-                    $categories = get_the_category($featured_post->ID);
-                    if ($categories): ?>
-                        <div class="category">
-                            <?php echo esc_html($categories[0]->name); ?>
-                        </div>
+        
+        <div class="archive-grid">
+            <?php if ($featured_post): ?>
+                <article class="archive-grid__featured fade-in">
+                    <?php if (has_post_thumbnail($featured_post->ID)): ?>
+                        <img src="<?php echo get_the_post_thumbnail_url($featured_post->ID, 'large'); ?>" 
+                            alt="<?php echo esc_attr($featured_post->post_title); ?>" 
+                            class="archive-grid__featured-image">
                     <?php endif; ?>
-
-                    <h2 class="title">
-                        <a href="<?php echo get_permalink($featured_post->ID); ?>">
-                            <?php echo esc_html($featured_post->post_title); ?>
-                        </a>
-                    </h2>
                     
-                    <div class="excerpt">
-                        <?php echo wp_trim_words($featured_post->post_excerpt ?: $featured_post->post_content, 20); ?>
-                    </div>
-                    
-                    <div class="date">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <?php echo get_the_date('M d, Y', $featured_post->ID); ?>
-                    </div>
-                </div>
-                
-                <a href="<?php echo get_permalink($featured_post->ID); ?>" class="view-all">View All</a>
-            </article>
-        <?php endif; ?>
-
-        <?php
-        // Display secondary featured posts (2-column layout)
-        if (!empty($secondary_posts)): 
-            $delay = 0;
-            foreach ($secondary_posts as $post):
-                setup_postdata($GLOBALS['post'] =& $post);
-                $delay += 0.2;
-        ?>
-            <article class="archive-grid__secondary slide-up" style="animation-delay: <?php echo $delay; ?>s;">
-                <?php if (has_post_thumbnail()): ?>
-                    <img src="<?php echo get_the_post_thumbnail_url(null, 'medium_large'); ?>" 
-                         alt="<?php echo esc_attr(get_the_title()); ?>" 
-                         class="archive-grid__secondary-image">
-                <?php endif; ?>
-                
-                <div class="archive-grid__secondary-content">
-                    <?php
-                    $categories = get_the_category();
-                    if ($categories): ?>
-                        <div class="category">
-                            <?php echo esc_html($categories[0]->name); ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <h2 class="title">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>
-                    </h2>
-                    
-                    <div class="date">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <?php echo get_the_date('M d, Y'); ?>
-                    </div>
-                </div>
-                
-                <a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
-            </article>
-        <?php 
-            endforeach;
-            wp_reset_postdata();
-        endif; 
-        ?>
-
-        <!-- Small posts (3-column layout) -->
-        <div class="archive-grid__small">
-            <?php
-            if ($grid_posts->have_posts()):
-                $delay = 0.4;
-                while ($grid_posts->have_posts()): $grid_posts->the_post();
-                    $delay += 0.1;
-                    
-                    // Get post categories for filtering
-                    $post_categories = get_the_category();
-                    $category_classes = '';
-                    foreach ($post_categories as $category) {
-                        $category_classes .= ' category-' . $category->slug;
-                    }
-            ?>
-                <article class="archive-grid__small-item slide-up <?php echo esc_attr($category_classes); ?>" style="animation-delay: <?php echo $delay; ?>s;">
-                    <div class="archive-grid__small-item-image-container">
-                        <?php if (has_post_thumbnail()): ?>
-                            <img src="<?php echo get_the_post_thumbnail_url(null, 'medium'); ?>" 
-                                alt="<?php echo esc_attr(get_the_title()); ?>" 
-                                class="archive-grid__small-image">
+                    <div class="archive-grid__featured-content">
+                        <?php
+                        $categories = get_the_category($featured_post->ID);
+                        if ($categories): ?>
+                            <div class="category">
+                                <?php echo esc_html($categories[0]->name); ?>
+                            </div>
                         <?php endif; ?>
+
+                        <h2 class="title">
+                            <a href="<?php echo get_permalink($featured_post->ID); ?>">
+                                <?php echo esc_html($featured_post->post_title); ?>
+                            </a>
+                        </h2>
+                        
+                        <div class="excerpt">
+                            <?php echo wp_trim_words($featured_post->post_excerpt ?: $featured_post->post_content, 20); ?>
+                        </div>
+                        
+                        <div class="date">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <?php echo get_the_date('M d, Y', $featured_post->ID); ?>
+                        </div>
                     </div>
                     
-                    <div class="archive-grid__small-item-content">
+                    <a href="<?php echo get_permalink($featured_post->ID); ?>" class="view-all">View Post</a>
+                </article>
+            <?php endif; ?>
+
+            <?php
+            // Display secondary featured posts (2-column layout)
+            if (!empty($secondary_posts)): 
+                $delay = 0;
+                foreach ($secondary_posts as $post):
+                    setup_postdata($GLOBALS['post'] =& $post);
+                    $delay += 0.2;
+            ?>
+                <article class="archive-grid__secondary slide-up" style="animation-delay: <?php echo $delay; ?>s;">
+                    <?php if (has_post_thumbnail()): ?>
+                        <img src="<?php echo get_the_post_thumbnail_url(null, 'medium_large'); ?>" 
+                            alt="<?php echo esc_attr(get_the_title()); ?>" 
+                            class="archive-grid__secondary-image">
+                    <?php endif; ?>
+                    
+                    <div class="archive-grid__secondary-content">
                         <?php
                         $categories = get_the_category();
                         if ($categories): ?>
@@ -203,15 +145,11 @@ $categories = get_categories(array(
                             </div>
                         <?php endif; ?>
 
-                        <h3 class="title">
+                        <h2 class="title">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
                             </a>
-                        </h3>
-                        
-                        <div class="excerpt">
-                            <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
-                        </div>
+                        </h2>
                         
                         <div class="date">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -227,27 +165,89 @@ $categories = get_categories(array(
                     <a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
                 </article>
             <?php 
-                endwhile;
+                endforeach;
                 wp_reset_postdata();
             endif; 
             ?>
+
+            <!-- Small posts (3-column layout) -->
+            <div class="archive-grid__small">
+                <?php
+                if ($grid_posts->have_posts()):
+                    $delay = 0.4;
+                    while ($grid_posts->have_posts()): $grid_posts->the_post();
+                        $delay += 0.1;
+                        
+                        // Get post categories for filtering
+                        $post_categories = get_the_category();
+                        $category_classes = '';
+                        foreach ($post_categories as $category) {
+                            $category_classes .= ' category-' . $category->slug;
+                        }
+                ?>
+                    <article class="archive-grid__small-item slide-up <?php echo esc_attr($category_classes); ?>" style="animation-delay: <?php echo $delay; ?>s;">
+                        <div class="archive-grid__small-item-image-container">
+                            <?php if (has_post_thumbnail()): ?>
+                                <img src="<?php echo get_the_post_thumbnail_url(null, 'medium'); ?>" 
+                                    alt="<?php echo esc_attr(get_the_title()); ?>" 
+                                    class="archive-grid__small-image">
+                            <?php endif; ?>
+                        </div>
+                        
+                        <div class="archive-grid__small-item-content">
+                            <?php
+                            $categories = get_the_category();
+                            if ($categories): ?>
+                                <div class="category">
+                                    <?php echo esc_html($categories[0]->name); ?>
+                                </div>
+                            <?php endif; ?>
+
+                            <h3 class="title">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h3>
+                            
+                            <div class="excerpt">
+                                <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
+                            </div>
+                            
+                            <div class="date">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                <?php echo get_the_date('M d, Y'); ?>
+                            </div>
+                        </div>
+                        
+                        <a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
+                    </article>
+                <?php 
+                    endwhile;
+                    wp_reset_postdata();
+                endif; 
+                ?>
+            </div>
+        </div>
+
+        <div class="loading-spinner"></div>
+
+        <div class="pagination">
+            <?php
+            echo paginate_links(array(
+                'total' => $grid_posts->max_num_pages,
+                'current' => $paged,
+                'prev_text' => __('&laquo; Previous'),
+                'next_text' => __('Next &raquo;')
+            ));
+            ?>
         </div>
     </div>
-
-    <div class="loading-spinner"></div>
-
-    <div class="pagination">
-        <?php
-        echo paginate_links(array(
-            'total' => $grid_posts->max_num_pages,
-            'current' => $paged,
-            'prev_text' => __('&laquo; Previous'),
-            'next_text' => __('Next &raquo;')
-        ));
-        ?>
-    </div>
-</div>
-
+</section>
 <script>
     // Category filtering
     document.addEventListener('DOMContentLoaded', function() {
@@ -299,5 +299,5 @@ $categories = get_categories(array(
         window.addEventListener('scroll', checkScroll);
     });
 </script>
-
+<?php get_template_part( 'template-parts/groups/groups', 'pre-footer' ); ?>
 <?php get_footer(); ?>

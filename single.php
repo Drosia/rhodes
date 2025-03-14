@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main class="single-post">
+<section class="single-post">
     <div class="container">
         <div class="single-post__content">
             <?php while (have_posts()) : the_post(); ?>
@@ -171,8 +171,8 @@ get_header(); ?>
             <?php endwhile; ?>
         </div>
     </div>
-</main>
-
+</section>
+<?php get_template_part( 'template-parts/groups/groups', 'pre-footer' ); ?>
 <?php get_footer(); ?>
 
 <?php

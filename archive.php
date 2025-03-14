@@ -43,7 +43,7 @@ $archive_description = get_field('archive_description', 'option');
 					</div>
 				</div>
 				
-				<a href="<?php echo get_permalink($featured_post->ID); ?>" class="view-all">View All</a>
+				<a href="<?php echo get_permalink($featured_post->ID); ?>" class="view-all">View Post</a>
 			</article>
 		<?php endif; ?>
 
