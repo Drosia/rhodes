@@ -28,20 +28,30 @@ get_header(); ?>
                                 <i class="fa fa-user"></i>
                                 <?php the_author(); ?>
                             </span>
+                            <span class="post__reading-time">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <?php echo reading_time(); ?>
+                            </span>
                         </div>
                     </header>
 
+                    <!-- Featured Image -->
                     <?php if (has_post_thumbnail()) : ?>
                         <div class="post__featured-image">
                             <?php the_post_thumbnail('full'); ?>
                         </div>
                     <?php endif; ?>
 
+                    <!-- Post Content -->
                     <div class="post__content">
                         <?php the_content(); ?>
                     </div>
 
                     <footer class="post__footer">
+                        <!-- Tags -->
                         <?php if (has_tag()) : ?>
                             <div class="post__tags">
                                 <i class="fa fa-tags"></i>
@@ -51,31 +61,40 @@ get_header(); ?>
 
                         <!-- Social Share Buttons -->
                         <div class="post__share">
-                            <h4>Share this post</h4>
+                            <h4>Share This Article</h4>
                             <div class="share-buttons">
-                                <a href="https://facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="share-facebook">
-                                    <!-- Facebook SVG Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                                        <path d="M15.117 0H.883C.396 0 0 .396 0 .883v14.234C0 15.604.396 16  .883 16h14.234c.487 0 .883-.396 .883-.883V.883C16 .396 15.604 0 15.117 0zM8 15.5V9.5H6.5V7h1.5V5.5c0-1.5.5-2.5 2.5-2.5H12v2.5h-1.5c-.5 0-.5.5-.5 1V7h2.5l-.5 2.5H10v6.5H8z"/>
+                                <a href="https://facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="share-button share-facebook" aria-label="Share on Facebook">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
                                     </svg>
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" target="_blank" class="share-twitter">
-                                    <!-- Twitter SVG Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                                        <path d="M5.026 15c6.038 0 9.34-5 9.34-9.34 0-.142 0-.283-.01-.423A6.693 6.693 0 0 0 16 3.542a6.56 6.56 0 0 1-1.889.517A3.293 3.293 0 0 0 15.557 2a6.57 6.57 0 0 1-2.084.793A3.281 3.281 0 0 0 7.875 6.5a9.325 9.325 0 0 1-6.75-3.415 3.28 3.28 0 0 0 1.016 4.375A3.276 3.276 0 0 1 .64 7.5v.041a3.283 3.283 0 0 0 2.628 3.215 3.28 3.28 0 0 1-.865.115c-.211 0-.417-.021-.617-.059a3.283 3.283 0 0 0 3.065 2.281A6.577 6.577 0 0 1 0 13.29a9.305 9.305 0 0 0 5.026 1.476"/>
+                                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" target="_blank" class="share-button share-twitter" aria-label="Share on Twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22 5.8a8.49 8.49 0 0 1-2.36.64 4.13 4.13 0 0 0 1.81-2.27 8.21 8.21 0 0 1-2.61 1 4.1 4.1 0 0 0-7 3.74 11.64 11.64 0 0 1-8.45-4.29 4.16 4.16 0 0 0-.55 2.07 4.09 4.09 0 0 0 1.82 3.41 4.05 4.05 0 0 1-1.86-.51v.05a4.1 4.1 0 0 0 3.3 4 4.2 4.2 0 0 1-1.86.07 4.11 4.11 0 0 0 3.83 2.84A8.22 8.22 0 0 1 2 18.33a11.57 11.57 0 0 0 6.29 1.85A11.59 11.59 0 0 0 20 8.45v-.53a8.43 8.43 0 0 0 2-2.12Z"/>
                                     </svg>
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="share-linkedin">
-                                    <!-- LinkedIn SVG Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                        <path d="M1.146 0A.5.5 0 0 0 .646.354v15.292a.5.5 0 0 0 .5.5h15.708a.5.5 0 0 0 .5-.5V.354a.5.5 0 0 0-.5-.5H1.146zM4.5 14H2V6h2.5v8zm-1.25-9.5A1.5 1.5 0 1 1 4.5 3a1.5 1.5 0 0 1-1.25 1.5zM14 14h-2.5v-4.5c0-1.125-.025-2.5-1.5-2.5-1.5 0-1.75 1.125-1.75 2.25V14H8V6h2.5v1.125c.5-.75 1.5-1.125 2.5-1.125 2 0 2.5 1.5 2.5 3.5V14z"/>
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo urlencode(get_the_title()); ?>" target="_blank" class="share-button share-linkedin" aria-label="Share on LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
                                     </svg>
                                 </a>
+                                <a href="mailto:?subject=<?php echo urlencode(get_the_title()); ?>&body=<?php echo urlencode(get_permalink()); ?>" class="share-button share-email" aria-label="Share via Email">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </a>
+                                <button class="share-button share-copy" aria-label="Copy Link" onclick="copyToClipboard('<?php echo esc_url(get_permalink()); ?>')">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </footer>
 
-                    <!-- Related Posts -->
+                    <!-- Related Articles -->
                     <?php
                     $categories = get_the_category();
                     if ($categories) {
@@ -84,38 +103,70 @@ get_header(); ?>
                             $category_ids[] = $category->term_id;
                         }
                         
-                        $related_posts = new WP_Query(array(
+                        $related_articles = new WP_Query(array(
                             'category__in' => $category_ids,
                             'post__not_in' => array(get_the_ID()),
                             'posts_per_page' => 3,
                             'orderby' => 'rand'
                         ));
 
-                        if ($related_posts->have_posts()) : ?>
-                            <div class="related-locations">
-                                <div class="related-locations__container">
-                                    <?php while ($related_posts->have_posts()) : $related_posts->the_post(); ?>
-                                        <div class="related-locations__item">
-                                            <a href="<?php the_permalink(); ?>" class="related-location-link">
-                                                <div class="related-location-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>')">
-                                                    <h3 class="related-location-title"><?php the_title(); ?></h3>
-                                                    <span class="related-location-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?></span>
-                                                    <!-- SVG Icon for Destination -->
-                                                    <div class="destination-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                                                            <path d="M8 0a4 4 0 0 1 4 4c0 2.5-4 8-4 8s-4-5.5-4-8a4 4 0 0 1 8 0zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-                                                        </svg>
+                        if ($related_articles->have_posts()) : ?>
+                            <section class="section article-suggestions">
+                                <div class="container">
+                                    <h2 class="article-suggestions__heading">You May Also Enjoy</h2>
+                                    <div class="article-grid">
+                                        <?php while ($related_articles->have_posts()) : $related_articles->the_post(); 
+                                            $article_id = get_the_ID();
+                                            $article_title = get_the_title();
+                                            $article_permalink = get_permalink();
+                                            $article_thumb = get_the_post_thumbnail_url($article_id, 'full');
+                                            $article_excerpt = wp_trim_words(get_the_excerpt(), 12, '...');
+                                            $article_date = get_the_date('M d, Y');
+                                        ?>
+                                            <div class="article-card">
+                                                <a href="<?= esc_url($article_permalink); ?>" class="article-card__link">
+                                                    <?php if (!empty($article_thumb)): ?>
+                                                        <div class="article-card__image" style="background-image:url('<?= esc_url($article_thumb) ?>')">
+                                                            <div class="article-card__overlay">
+                                                                <span class="article-card__date"><?= esc_html($article_date); ?></span>
+                                                                <div class="article-card__icon">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                    <div class="article-card__content">
+                                                        <h3 class="article-card__title"><?= esc_html($article_title); ?></h3>
+                                                        <?php if (!empty($article_excerpt)): ?>
+                                                            <p class="article-card__excerpt"><?= esc_html($article_excerpt); ?></p>
+                                                        <?php endif; ?>
                                                     </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    <?php endwhile; ?>
+                                                </a>
+                                            </div>
+                                        <?php endwhile; ?>
+                                    </div>
                                 </div>
-                            </div>
+                            </section>
                         <?php endif;
                         wp_reset_postdata();
                     }
                     ?>
+
+                    <!-- Author Bio -->
+                    <div class="post__author-bio">
+                        <div class="author-avatar">
+                            <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name"><?php the_author_posts_link(); ?></h4>
+                            <p class="author-description"><?php the_author_meta('description'); ?></p>
+                            <?php if (get_the_author_meta('user_url')) : ?>
+                                <a href="<?php echo esc_url(get_the_author_meta('user_url')); ?>" class="author-website" target="_blank">Website</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
                 </article>
             <?php endwhile; ?>
         </div>
@@ -123,3 +174,119 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
+
+<?php
+// Add schema markup for single post
+function add_post_schema() {
+    if (is_single() && !is_singular('cruise') && !is_singular('destination')) {
+        $post_id = get_the_ID();
+        $title = get_the_title($post_id);
+        $permalink = get_permalink($post_id);
+        $excerpt = get_the_excerpt($post_id);
+        $date_published = get_the_date('c', $post_id);
+        $date_modified = get_the_modified_date('c', $post_id);
+        
+        // Get author info
+        $author_id = get_post_field('post_author', $post_id);
+        $author_name = get_the_author_meta('display_name', $author_id);
+        $author_url = get_author_posts_url($author_id);
+        
+        // Get featured image
+        $image = '';
+        if (has_post_thumbnail($post_id)) {
+            $image_id = get_post_thumbnail_id($post_id);
+            $image_url = wp_get_attachment_image_src($image_id, 'full');
+            if ($image_url) {
+                $image = $image_url[0];
+            }
+        }
+        
+        // Get logo for publisher
+        $logo = '';
+        if (function_exists('get_custom_logo')) {
+            $custom_logo_id = get_theme_mod('custom_logo');
+            $logo_image = wp_get_attachment_image_src($custom_logo_id, 'full');
+            if ($logo_image) {
+                $logo = $logo_image[0];
+            }
+        }
+        
+        // Build schema
+        $schema = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'BlogPosting',
+            'mainEntityOfPage' => array(
+                '@type' => 'WebPage',
+                '@id' => $permalink
+            ),
+            'headline' => $title,
+            'description' => $excerpt,
+            'datePublished' => $date_published,
+            'dateModified' => $date_modified,
+            'author' => array(
+                '@type' => 'Person',
+                'name' => $author_name,
+                'url' => $author_url
+            ),
+            'publisher' => array(
+                '@type' => 'Organization',
+                'name' => get_bloginfo('name'),
+                'logo' => array(
+                    '@type' => 'ImageObject',
+                    'url' => $logo
+                )
+            )
+        );
+        
+        // Add image if available
+        if (!empty($image)) {
+            $schema['image'] = array(
+                '@type' => 'ImageObject',
+                'url' => $image
+            );
+        }
+        
+        echo '<script type="application/ld+json">' . json_encode($schema) . '</script>';
+    }
+}
+add_action('wp_head', 'add_post_schema');
+?>
+
+<?php
+function reading_time() {
+    $content = get_post_field('post_content', get_the_ID());
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200); // Assuming 200 words per minute
+    
+    return $reading_time . ' min read';
+}
+?>
+
+<?php
+function generate_table_of_contents($content) {
+    if (!is_single()) return $content;
+    
+    $headings = array();
+    preg_match_all('/<h([2-3]).*?>(.*?)<\/h[2-3]>/i', $content, $matches, PREG_SET_ORDER);
+    
+    if (empty($matches)) return $content;
+    
+    $toc = '<div class="post__toc"><h4>Table of Contents</h4><ul>';
+    
+    foreach ($matches as $match) {
+        $level = $match[1];
+        $title = strip_tags($match[2]);
+        $anchor = sanitize_title($title);
+        
+        // Replace the heading with one that has an ID
+        $content = str_replace($match[0], '<h' . $level . ' id="' . $anchor . '">' . $match[2] . '</h' . $level . '>', $content);
+        
+        $toc .= '<li class="toc-level-' . $level . '"><a href="#' . $anchor . '">' . $title . '</a></li>';
+    }
+    
+    $toc .= '</ul></div>';
+    
+    return $toc . $content;
+}
+add_filter('the_content', 'generate_table_of_contents');
+?>

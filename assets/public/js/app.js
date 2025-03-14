@@ -126,6 +126,23 @@ class Global {
           $answer.css('height', '0');
         }
       });
+      $('.js-category-select').change(function () {
+        const category = $(this).val();
+        const cruiseSelect = $('.js-cruise-select'); // Clear previous options
+
+        cruiseSelect.empty(); // Show options based on category selection
+
+        if (category === 'semi-private') {
+          cruiseSelect.append('<option value="morning">Morning Cruise</option>');
+          cruiseSelect.append('<option value="sunset">Sunset Cruise</option>');
+        } else if (category === 'private') {
+          cruiseSelect.append('<option value="half-day">Half Day Private</option>');
+          cruiseSelect.append('<option value="full-day">Full Day Private</option>');
+        } // Enable the cruise select dropdown
+
+
+        cruiseSelect.prop('disabled', false);
+      });
     });
   }
 

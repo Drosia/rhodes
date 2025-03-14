@@ -245,6 +245,32 @@
                             },
                             "return_format": "array",
                             "parent_repeater": "field_67b360ec124db"
+                        },
+                        {
+                            "key": "field_67d4054cd865c",
+                            "label": "Icon",
+                            "name": "icon",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "medium",
+                            "parent_repeater": "field_67b360ec124db"
                         }
                     ]
                 },
@@ -258,7 +284,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "32.3333",
+                        "width": "16.666",
                         "class": "",
                         "id": ""
                     },
@@ -267,6 +293,31 @@
                     "rows": "",
                     "placeholder": "",
                     "new_lines": "br"
+                },
+                {
+                    "key": "field_67d405fc41d2e",
+                    "label": "Address Icon",
+                    "name": "address_icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "16.666",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
                 }
             ]
         },
@@ -669,5 +720,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741701932
+    "modified": 1741948474
 }
