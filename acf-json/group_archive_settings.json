@@ -1,0 +1,146 @@
+{
+    "key": "group_archive_settings",
+    "title": "Archive Settings",
+    "fields": [
+        {
+            "key": "field_archive_featured_post",
+            "label": "Featured Post",
+            "name": "featured_post",
+            "type": "post_object",
+            "instructions": "Select the post to be featured at the top of the archive",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_archive_title",
+            "label": "Archive Title",
+            "name": "archive_title",
+            "type": "text",
+            "instructions": "Enter the main title for the archive page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Places to Stay",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_archive_description",
+            "label": "Archive Description",
+            "name": "archive_description",
+            "type": "textarea",
+            "instructions": "Enter a description for the archive page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Explore European's finest accommodations, from the sun-drenched shores of the French Riviera to the historic elegance of London and the romantic charm of the Bavarian Alps.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_archive_secondary_posts",
+            "label": "Secondary Featured Posts",
+            "name": "secondary_featured_posts",
+            "type": "post_object",
+            "instructions": "Select posts to be featured in the secondary section (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1,
+            "max": 2
+        },
+        {
+            "key": "field_archive_posts_per_page",
+            "label": "Posts Per Page",
+            "name": "posts_per_page",
+            "type": "number",
+            "instructions": "Number of posts to display per page in the grid",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 6,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 3,
+            "max": 12,
+            "step": 3
+        },
+        {
+            "key": "field_archive_show_filters",
+            "label": "Show Category Filters",
+            "name": "show_filters",
+            "type": "true_false",
+            "instructions": "Enable category filtering on the archive page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-archive-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": ""
+} 

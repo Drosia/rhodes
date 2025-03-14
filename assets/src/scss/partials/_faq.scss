@@ -1,10 +1,10 @@
 // FAQ Page Styles
 .section--faq {
-    margin: 130px 0 150px;
+    margin: 160px 0 160px;
     background-color: #f9f9f9; // Light background for contrast
 
     @media (max-width: $max-md) {
-        margin: 120px 0;
+        margin: 140px 0;
     }
 
     .faq-header {

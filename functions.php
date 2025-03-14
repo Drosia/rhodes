@@ -132,6 +132,14 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page();
 
+	acf_add_options_page(array(
+		'page_title' => 'Archive Settings',
+		'menu_title' => 'Archive Settings',
+		'menu_slug'  => 'theme-archive-settings',
+		'capability' => 'edit_posts',
+		'redirect'   => false
+	));
+
 }
 /**********************************************************************/
 

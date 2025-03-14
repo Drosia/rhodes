@@ -58,7 +58,7 @@
                                                 <?php if ($address_icon): ?>
                                                     <img src="<?= esc_url($address_icon['url']); ?>" alt="Address Icon" class="footer__icon">
                                                 <?php endif; ?>
-                                                <?= esc_html($address); ?>
+                                                <?= $address; ?>
                                             </li>
                                         <?php endif; ?>
                                     </ul>
