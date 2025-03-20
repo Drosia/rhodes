@@ -71,15 +71,40 @@
                                     if ($starting_trip && $end_trip) {
                                         $start_time = DateTime::createFromFormat('H:i:s', $starting_trip);
                                         $end_time   = DateTime::createFromFormat('H:i:s', $end_trip);
-
+                                
                                         if ($start_time && $end_time) {
                                             $duration = $end_time->diff($start_time)->h; // Get duration in hours
-                                            $trip_duration_text = "{$duration} hour semi-private cruise from " . $start_time->format('H:i') . " - " . $end_time->format('H:i') . $show_guests_text;
+                                
+                                            // Format start time as 24-hour format with AM/PM appended manually
+                                            $start_time_formatted = $start_time->format('H:i'); // 24-hour format (e.g., 10:00)
+                                            
+                                            // Format end time as 24-hour format with AM/PM appended manually
+                                            $end_time_formatted = $end_time->format('H:i'); // 24-hour format (e.g., 15:00)
+                                
+                                            // Check if the hour is greater than or equal to 12, add "pm" suffix
+                                            if ((int) $end_time->format('H') >= 12) {
+                                                $end_time_formatted .= ' pm'; // Add 'pm' if the hour is 12 or later
+                                            } else {
+                                                $end_time_formatted .= ' am'; // Add 'am' if the hour is before 12
+                                            }
+                                
+                                            // Similarly for start time
+                                            if ((int) $start_time->format('H') >= 12) {
+                                                $start_time_formatted .= ' pm'; // Add 'pm' if the hour is 12 or later
+                                            } else {
+                                                $start_time_formatted .= ' am'; // Add 'am' if the hour is before 12
+                                            }
+                                
+                                            $trip_duration_text = "{$duration} hour semi-private cruise from {$start_time_formatted} - {$end_time_formatted}";
+                                
+                                            // Add any extra text for guests, if applicable
+                                            $trip_duration_text .= $show_guests_text;
                                         }
                                     }
-                                }else{
+                                } else {
                                     $trip_duration_text = $free_text_on_bellow_button;
                                 }
+                                
 
                             ?>
                                 <div class="cruise--item">

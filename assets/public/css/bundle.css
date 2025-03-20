@@ -2715,6 +2715,25 @@ button-widget {
     .section-image-gallery {
       margin-bottom: 50px; } }
 
+.section--archive {
+  margin: 150px 0; }
+
+.section--news {
+  margin: 50px 0 150px; }
+  @media only screen and (max-width: 768px) {
+    .section--news {
+      margin: 50px 0 50px; } }
+  .section--news h2 {
+    font-size: 54px;
+    line-height: 1.1;
+    color: #0f1832;
+    margin-bottom: 25px;
+    text-align: center; }
+    @media only screen and (max-width: 768px) {
+      .section--news h2 {
+        margin-bottom: 50px;
+        font-size: 32px; } }
+
 /* ==========================================================================
    SCSS Styles [PARTIALS:Elements]
    ========================================================================== */
@@ -2932,16 +2951,16 @@ button-widget {
     justify-content: space-between;
     align-items: center;
     gap: 15px; }
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1366px) {
       .header-row {
         flex-direction: column; } }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1366px) {
     .header__right {
       display: none; } }
   .header__left {
-    flex-basis: 140px;
-    max-width: 140px; }
-    @media only screen and (max-width: 1024px) {
+    flex-basis: 160px;
+    max-width: 160px; }
+    @media only screen and (max-width: 1366px) {
       .header__left {
         flex-basis: 100%;
         max-width: 100%;
@@ -2951,30 +2970,27 @@ button-widget {
           margin-left: auto; }
         .header__left .menu-toggle {
           margin-left: auto; } }
-  .header__center {
-    flex-basis: 615px;
-    max-width: 615px; }
-    @media only screen and (max-width: 1024px) {
-      .header__center {
-        flex-basis: 100%;
-        max-width: 100%;
-        position: fixed;
-        top: 139px;
-        background: #0f1832;
-        left: -1024px;
-        width: 100%;
-        height: calc(100vh - 139px);
-        transition: all 400ms linear; } }
-    .header__center.active {
-      transform: translateX(1024px); }
-      .header__center.active button-widget {
-        display: flex;
-        justify-content: center; }
-    .header__center button-widget {
-      display: none; }
+  @media only screen and (max-width: 1366px) {
+    .header__center {
+      flex-basis: 100%;
+      max-width: 100%;
+      position: fixed;
+      top: 139px;
+      background: #0f1832;
+      left: -1366px;
+      width: 100%;
+      height: calc(100vh - 139px);
+      transition: all 400ms linear; } }
+  .header__center.active {
+    transform: translateX(1366px); }
+    .header__center.active button-widget {
+      display: flex;
+      justify-content: center; }
+  .header__center button-widget {
+    display: none; }
   .header__top {
     margin-top: 30px;
-    font-size: 10px;
+    font-size: 12px;
     color: #fff;
     display: flex;
     justify-content: end;
@@ -2987,7 +3003,7 @@ button-widget {
   justify-content: space-between;
   align-items: center;
   gap: 25px; }
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1366px) {
     .menu-class ul {
       flex-direction: column;
       gap: 6px;
@@ -2995,7 +3011,7 @@ button-widget {
   .menu-class ul li.current-menu-item a {
     text-decoration: underline; }
   .menu-class ul a {
-    font-size: 14px;
+    font-size: 16px;
     color: #fff; }
   .menu-class ul .current-menu-item a {
     font-weight: bold; }
@@ -3006,7 +3022,7 @@ button-widget {
 .menu-toggle {
   display: block;
   cursor: pointer; }
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 1366px) {
     .menu-toggle {
       display: none; } }
   .menu-toggle__wrapper {
@@ -3069,6 +3085,53 @@ button-widget {
         font-size: 18px; }
         .hero p br {
           display: none; } }
+
+.cruise-hero-extra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 35px auto 20px;
+  margin-bottom: auto;
+  gap: 20px; }
+  @media only screen and (max-width: 768px) {
+    .cruise-hero-extra {
+      flex-direction: column;
+      align-items: center;
+      margin: 25px auto 15px; } }
+  .cruise-hero-extra__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 15px;
+    color: #fff; }
+    @media only screen and (max-width: 768px) {
+      .cruise-hero-extra__item {
+        margin-bottom: 20px;
+        width: 100%; } }
+  .cruise-hero-extra__icon {
+    margin-bottom: 15px; }
+    .cruise-hero-extra__icon img {
+      max-width: 80px;
+      height: auto; }
+      @media only screen and (max-width: 768px) {
+        .cruise-hero-extra__icon img {
+          max-width: 60px; } }
+  .cruise-hero-extra__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 768px) {
+      .cruise-hero-extra__title {
+        font-size: 16px; } }
+  .cruise-hero-extra__message {
+    font-size: 16px;
+    line-height: 1.3; }
+    @media only screen and (max-width: 768px) {
+      .cruise-hero-extra__message {
+        font-size: 14px; } }
 
 .form-container {
   margin-top: auto;
@@ -3258,12 +3321,12 @@ button-widget {
       font-size: 32px; } }
 .cruises__bottom p {
   margin-top: 15px;
-  font-size: 16px; }
+  font-size: 18px; }
   @media only screen and (max-width: 768px) {
     .cruises__bottom p br {
       display: none; } }
   .cruises__bottom p span {
-    font-size: 14px; }
+    font-size: 16px; }
     @media only screen and (max-width: 768px) {
       .cruises__bottom p span {
         display: block;
@@ -3342,6 +3405,10 @@ button-widget {
           justify-content: center;
           margin: 0 auto;
           text-align: center; } }
+      .section--banner.section--banner-472 .banner__content > span {
+        font-size: 18px;
+        margin-top: 4px;
+        display: block; }
   .section--banner .container {
     height: 100%; }
 
@@ -3416,7 +3483,7 @@ button-widget {
     margin-bottom: 8px; }
   .location-image span {
     display: block;
-    font-size: 13px; }
+    font-size: 16px; }
   .location-image:before {
     content: '';
     position: absolute;
@@ -3433,7 +3500,7 @@ button-widget {
 .see-more {
   display: block;
   text-align: center;
-  font-size: 13px;
+  font-size: 16px;
   text-decoration: underline;
   margin-top: 25px; }
 
@@ -3460,10 +3527,11 @@ button-widget {
     color: rgba(15, 24, 50, 0.7); }
   .simple-text p {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.1;
     color: #0f1832;
-    letter-spacing: 1.6px; }
+    letter-spacing: 1.1px;
+    text-align: left; }
     @media only screen and (max-width: 768px) {
       .simple-text p {
         letter-spacing: 1.2px; }
@@ -4338,7 +4406,8 @@ button-widget {
       height: 180px;
       overflow: hidden; }
       .archive-grid__small-item-image-container img {
-        width: 100%; }
+        width: 100%;
+        transition: transform 0.5s ease; }
     .archive-grid__small-item-image {
       width: 100%;
       height: 100%;

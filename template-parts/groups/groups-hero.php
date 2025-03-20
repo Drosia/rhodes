@@ -71,6 +71,36 @@
 							</div>
 						</form>
 					<?php endif; ?>
+					
+					<?php 
+					// Check if cruise_hero_extra field exists and has rows
+					if( have_rows('cruise_hero_extra') ): ?>
+						<div class="cruise-hero-extra">
+							<?php while( have_rows('cruise_hero_extra') ): the_row(); 
+								$icon = get_sub_field('icon');
+								$title = get_sub_field('title');
+								$message = get_sub_field('message');
+							?>
+								<div class="cruise-hero-extra__item">
+									<?php if($icon): ?>
+										<div class="cruise-hero-extra__icon">
+											<img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>">
+										</div>
+									<?php endif; ?>
+									<?php if($title): ?>
+										<div class="cruise-hero-extra__title">
+											<?php echo esc_html($title); ?>
+										</div>
+									<?php endif; ?>
+									<?php if($message): ?>
+										<div class="cruise-hero-extra__message">
+											<?php echo $message; ?>
+										</div>
+									<?php endif; ?>
+								</div>
+							<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>

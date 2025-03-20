@@ -16,23 +16,23 @@
       align-items: center;
       gap: 15px;
 
-      @media only screen and (max-width: $max-lg) {
+      @media only screen and (max-width: $max-xl) {
          flex-direction: column;
       }
    }
 
    &__right {
 
-      @media only screen and (max-width: $max-lg) {
+      @media only screen and (max-width: $max-xl) {
          display: none;
       }
    }
 
    &__left {
-      flex-basis: 140px;
-      max-width: 140px;
+      flex-basis: 160px;
+      max-width: 160px;
 
-      @media only screen and (max-width: $max-lg) {
+      @media only screen and (max-width: $max-xl) {
          flex-basis: 100%;
          max-width: 100%;
          width: 100%;
@@ -49,16 +49,15 @@
    }
 
    &__center {
-      flex-basis: 615px;
-      max-width: 615px;
+ 
 
-      @media only screen and (max-width: $max-lg) {
+      @media only screen and (max-width: $max-xl) {
          flex-basis: 100%;
          max-width: 100%;
          position: fixed;
          top: 139px;
          background: #0f1832;
-         left: -1024px;
+         left: -1366px;
          width: 100%;
          height: calc(100vh - 139px);
          transition: all 400ms linear;
@@ -66,7 +65,7 @@
       }
 
       &.active {
-         transform: translateX(1024px);
+         transform: translateX(1366px);
 
          button-widget {
             display: flex;
@@ -81,7 +80,7 @@
 
    &__top {
       margin-top: 30px;
-      font-size: 10px;
+      font-size: 12px;
       color: #fff;
       display: flex;
       justify-content: end;
@@ -98,7 +97,7 @@
       align-items: center;
       gap: 25px;
 
-      @media only screen and (max-width: $max-lg) {
+      @media only screen and (max-width: $max-xl) {
          flex-direction: column;
          gap: 6px;
          margin-top: 50px;
@@ -113,7 +112,7 @@
       }
 
       a {
-         font-size: 14px;
+         font-size: 16px;
          color: #fff;
       }
 
@@ -133,7 +132,7 @@
    display: block;
    cursor: pointer;
 
-   @media only screen and (min-width: $max-lg) {
+   @media only screen and (min-width: $max-xl) {
       display: none;
    }
 

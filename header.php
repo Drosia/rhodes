@@ -42,7 +42,7 @@
 						<div class="header__left">
 							<a href="<?php echo home_url(); ?>" class="header-logo">
 								<?php $website_logo = get_field( 'logo', 'options' );?>
-								<img src="<?php echo $website_logo; ?>" alt="website logo" width="140" height="52">
+								<img src="<?php echo $website_logo; ?>" alt="website logo" width="160" height="42">
 							</a>
 							<div class="menu-toggle jsMenuToggle">
 								<div class="menu-toggle__wrapper">

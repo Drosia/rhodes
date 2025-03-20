@@ -182,7 +182,99 @@
             "append": ""
         },
         {
-            "key": "field_67d02cfba96f3",
+            "key": "field_67d82e1be5cd1",
+            "label": "Cruise Hero Extra",
+            "name": "cruise_hero_extra",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67d82e3ce5cd2",
+                    "label": "Icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.3333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_67d82e1be5cd1"
+                },
+                {
+                    "key": "field_67d82e64e5cd3",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67d82e1be5cd1"
+                },
+                {
+                    "key": "field_67d82e73e5cd4",
+                    "label": "Message",
+                    "name": "message",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_67d82e1be5cd1"
+                }
+            ]
+        },
+        {
+            "key": "field_67d031844982c",
             "label": "Free Text On Bellow Button",
             "name": "free_text_on_bellow_button",
             "aria-label": "",
@@ -269,7 +361,7 @@
         },
         {
             "key": "field_67c080b31e92a",
-            "label": "Cruice Gallery",
+            "label": "Cruise Gallery",
             "name": "cruice_gallery",
             "aria-label": "",
             "type": "gallery",
@@ -314,5 +406,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741696305
+    "modified": 1742220953
 }
