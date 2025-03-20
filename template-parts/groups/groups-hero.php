@@ -32,44 +32,43 @@
 						<?php endif; ?>
 					</div>
 					<?php if ( $show_form_on_hero_section ) : ?>
-						<form class="form-container">
-							<div class="form-column">
-								<label for="guests">Guests</label>
-								<select id="guests" name="guests">
-									<option value="1">1 Guest</option>
-									<option value="2">2 Guests</option>
-									<option value="3">3 Guests</option>
-									<option value="4">4 Guests</option>
-									<option value="5">5 Guests</option>
-									<option value="6">6 Guests</option>
-									<option value="7">7 Guests</option>
-									<option value="8">8 Guests</option>
-									<option value="9">9 Guests</option>
-									<option value="10">10 Guests</option>
-									<option value="more">more than 10 Guests</option>
-								</select>	
-								<span class="arrow-down js-select-arrow"></span>
-							</div>
-							<div class="form-column">
-								<label for="category">Category</label>
-								<select id="category" name="category" class="js-category-select">
-									<option value="" disabled selected>Select Category</option>
-									<option value="semi-private">Semi-Private</option>
-									<option value="private">Private</option>
-								</select>	
-								<span class="arrow-down js-select-arrow"></span>
-							</div>
-							<div class="form-column">
-								<label for="cruise_type">Cruise</label>
-								<select id="cruise_type" name="cruise_type" class="js-cruise-select">
-									<option value="" disabled selected>Select Category First</option>
-								</select>	
-								<span class="arrow-down js-select-arrow"></span>
-							</div>
-							<div class="form-column form-column--submit">
-								<button type="submit">Check Availability</button>
-							</div>
-						</form>
+    						<form class="form-container">
+    							<div class="form-column">
+    								<label for="guests"><?= esc_html__('Guests', 'psdtheme'); ?></label>
+    								<select id="guests" name="guests">
+    									<option value="1"><?= esc_html__('1 Guest', 'psdtheme'); ?></option>
+    									<option value="2"><?= esc_html__('2 Guests', 'psdtheme'); ?></option>
+    									<option value="3"><?= esc_html__('3 Guests', 'psdtheme'); ?></option>
+    									<option value="4"><?= esc_html__('4 Guests', 'psdtheme'); ?></option>
+    									<option value="5"><?= esc_html__('5 Guests', 'psdtheme'); ?></option>
+    									<option value="6"><?= esc_html__('6 Guests', 'psdtheme'); ?></option>
+    									<option value="7"><?= esc_html__('7 Guests', 'psdtheme'); ?></option>
+    									<option value="8"><?= esc_html__('8 Guests', 'psdtheme'); ?></option>
+    									<option value="9"><?= esc_html__('9 Guests', 'psdtheme'); ?></option>
+    									<option value="10"><?= esc_html__('10 Guests', 'psdtheme'); ?></option>
+    								</select>	
+    								<span class="arrow-down js-select-arrow"></span>
+    							</div>
+    							<div class="form-column">
+    								<label for="category"><?= esc_html__('Category', 'psdtheme'); ?></label>
+    								<select id="category" name="category" class="js-category-select">
+    									<option value="" disabled selected><?= esc_html__('Select Category', 'psdtheme'); ?></option>
+    									<option value="semi-private"><?= esc_html__('Semi-Private', 'psdtheme'); ?></option>
+    									<option value="private"><?= esc_html__('Private', 'psdtheme'); ?></option>
+    								</select>	
+    								<span class="arrow-down js-select-arrow"></span>
+    							</div>
+    							<div class="form-column">
+    								<label for="cruise_type"><?= esc_html__('Cruise', 'psdtheme'); ?></label>
+    								<select id="cruise_type" name="cruise_type" class="js-cruise-select">
+    									<option value="" disabled selected><?= esc_html__('Select Category First', 'psdtheme'); ?></option>
+    								</select>	
+    								<span class="arrow-down js-select-arrow"></span>
+    							</div>
+    							<div class="form-column form-column--submit">
+    								<button type="submit"><?= esc_html__('Check Availability', 'psdtheme'); ?></button>
+    							</div>
+    						</form>
 					<?php endif; ?>
 					
 					<?php 

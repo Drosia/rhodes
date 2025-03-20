@@ -29,8 +29,8 @@
    }
 
    &__left {
-      flex-basis: 160px;
-      max-width: 160px;
+      flex-basis: 190px;
+      max-width: 190px;
 
       @media only screen and (max-width: $max-xl) {
          flex-basis: 100%;
@@ -49,17 +49,17 @@
    }
 
    &__center {
- 
+
 
       @media only screen and (max-width: $max-xl) {
          flex-basis: 100%;
          max-width: 100%;
          position: fixed;
-         top: 139px;
+         top: 149px;
          background: #0f1832;
          left: -1366px;
          width: 100%;
-         height: calc(100vh - 139px);
+         height: calc(100vh - 149px);
          transition: all 400ms linear;
 
       }
@@ -70,6 +70,12 @@
          button-widget {
             display: flex;
             justify-content: center;
+
+            @media only screen and (max-width: $max-xl) {
+               margin-top: 10px;
+            }
+
+
          }
       }
 

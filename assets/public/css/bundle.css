@@ -2958,8 +2958,8 @@ button-widget {
     .header__right {
       display: none; } }
   .header__left {
-    flex-basis: 160px;
-    max-width: 160px; }
+    flex-basis: 190px;
+    max-width: 190px; }
     @media only screen and (max-width: 1366px) {
       .header__left {
         flex-basis: 100%;
@@ -2975,17 +2975,20 @@ button-widget {
       flex-basis: 100%;
       max-width: 100%;
       position: fixed;
-      top: 139px;
+      top: 149px;
       background: #0f1832;
       left: -1366px;
       width: 100%;
-      height: calc(100vh - 139px);
+      height: calc(100vh - 149px);
       transition: all 400ms linear; } }
   .header__center.active {
     transform: translateX(1366px); }
     .header__center.active button-widget {
       display: flex;
       justify-content: center; }
+      @media only screen and (max-width: 1366px) {
+        .header__center.active button-widget {
+          margin-top: 10px; } }
   .header__center button-widget {
     display: none; }
   .header__top {
@@ -3180,7 +3183,8 @@ button-widget {
       height: auto; } }
   .form-column label {
     font-size: 17px;
-    padding-left: 18px; }
+    padding-left: 18px;
+    font-weight: 600; }
   .form-column input,
   .form-column select {
     margin-left: 20px; }
@@ -3203,7 +3207,7 @@ button-widget {
     font-size: 17px;
     line-height: 1;
     background-color: transparent;
-    color: #c7c7c7;
+    color: #fff;
     cursor: pointer; }
     @media only screen and (max-width: 1024px) {
       .form-column input,
@@ -3216,6 +3220,9 @@ button-widget {
       margin: 0;
       color: #fff;
       background: none; }
+    .form-column input option,
+    .form-column select option {
+      color: #0f1832; }
   .form-column button {
     background: transparent;
     border: none;

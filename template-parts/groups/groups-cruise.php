@@ -95,7 +95,8 @@
                                                 $start_time_formatted .= ' am'; // Add 'am' if the hour is before 12
                                             }
                                 
-                                            $trip_duration_text = "{$duration} hour semi-private cruise from {$start_time_formatted} - {$end_time_formatted}";
+                                                // Start of Selection
+                                                $trip_duration_text = sprintf( __('%s hour semi-private cruise from %s - %s', 'psdtheme'), $duration, $start_time_formatted, $end_time_formatted );
                                 
                                             // Add any extra text for guests, if applicable
                                             $trip_duration_text .= $show_guests_text;
@@ -122,9 +123,9 @@
                                         <?php endif; ?>
 
                                         <?php if (!$upon_request) : ?>
-                                            <div class="btn">Book your seats</div>
+                                            <div class="btn"><?= esc_html__('Book your seats', 'psdtheme'); ?></div>
                                         <?php else : ?>
-                                            <div class="btn">Upon Request</div>
+                                            <div class="btn"><?= esc_html__('Upon Request', 'psdtheme'); ?></div>
                                         <?php endif; ?>
 
                                         <?php if ($trip_duration_text) : ?>

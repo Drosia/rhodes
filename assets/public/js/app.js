@@ -130,14 +130,25 @@ class Global {
         const category = $(this).val();
         const cruiseSelect = $('.js-cruise-select'); // Clear previous options
 
-        cruiseSelect.empty(); // Show options based on category selection
+        cruiseSelect.empty();
+        const isGerman = window.location.pathname.startsWith('/de'); // Show options based on category selection
 
         if (category === 'semi-private') {
-          cruiseSelect.append('<option value="morning">Morning Cruise</option>');
-          cruiseSelect.append('<option value="sunset">Sunset Cruise</option>');
+          if (isGerman) {
+            cruiseSelect.append('<option value="morning">Morgenkreuzfahrt</option>');
+            cruiseSelect.append('<option value="sunset">Sonnenuntergang Kreuzfahrt</option>');
+          } else {
+            cruiseSelect.append('<option value="morning">Morning Cruise</option>');
+            cruiseSelect.append('<option value="sunset">Sunset Cruise</option>');
+          }
         } else if (category === 'private') {
-          cruiseSelect.append('<option value="half-day">Half Day Private</option>');
-          cruiseSelect.append('<option value="full-day">Full Day Private</option>');
+          if (isGerman) {
+            cruiseSelect.append('<option value="half-day">Halbtägig Privat</option>');
+            cruiseSelect.append('<option value="full-day">Ganztägig Privat</option>');
+          } else {
+            cruiseSelect.append('<option value="half-day">Half Day Private</option>');
+            cruiseSelect.append('<option value="full-day">Full Day Private</option>');
+          }
         } // Enable the cruise select dropdown
 
 
