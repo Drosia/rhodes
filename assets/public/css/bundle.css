@@ -3160,6 +3160,7 @@ button-widget {
   flex-basis: 386px;
   max-width: 386px;
   background-color: #fff;
+  padding-right: 15px;
   /* For better browser support */
   /* Hide default select arrow */
   /* Ensure a consistent style */ }
@@ -3183,7 +3184,7 @@ button-widget {
       height: auto; } }
   .form-column label {
     font-size: 17px;
-    padding-left: 18px;
+    padding-left: 15px;
     font-weight: 600; }
   .form-column input,
   .form-column select {

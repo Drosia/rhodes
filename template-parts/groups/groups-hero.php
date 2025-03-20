@@ -10,15 +10,16 @@
 		$image = get_sub_field('background_image');
 		$title = get_sub_field('title');
 		$text = get_sub_field('text');
-		$button = get_sub_field('button');
-		$show_form_on_hero_section = get_sub_field('show_form_on_hero_section');
-		if ( $title === '<Title>') {
-			$title = get_the_title(get_queried_object_id());
-		}
+	// Start of Selection
+	$button = get_sub_field('button');
+	$show_form_on_hero_section = get_sub_field('show_form_on_hero_section');
+	if ( $title === '<Title>') {
+		$title = get_the_title(get_queried_object_id());
+	}
 
 	?>
 		<section class="section section--hero background-image__full background-image" style="background-image: url('<?php echo $image; ?>');">
-			<div class="container">
+			<div class="container<?= $show_form_on_hero_section ? ' container--header' : ''; ?>">
 				<div class="hero">
 					<div class="hero__content <?= !$show_form_on_hero_section ? 'mb-auto' : ''; ?>">
 						<?php if( $title) : ?>
@@ -32,23 +33,23 @@
 						<?php endif; ?>
 					</div>
 					<?php if ( $show_form_on_hero_section ) : ?>
-    						<form class="form-container">
-    							<div class="form-column">
-    								<label for="guests"><?= esc_html__('Guests', 'psdtheme'); ?></label>
-    								<select id="guests" name="guests">
-    									<option value="1"><?= esc_html__('1 Guest', 'psdtheme'); ?></option>
-    									<option value="2"><?= esc_html__('2 Guests', 'psdtheme'); ?></option>
-    									<option value="3"><?= esc_html__('3 Guests', 'psdtheme'); ?></option>
-    									<option value="4"><?= esc_html__('4 Guests', 'psdtheme'); ?></option>
-    									<option value="5"><?= esc_html__('5 Guests', 'psdtheme'); ?></option>
-    									<option value="6"><?= esc_html__('6 Guests', 'psdtheme'); ?></option>
-    									<option value="7"><?= esc_html__('7 Guests', 'psdtheme'); ?></option>
-    									<option value="8"><?= esc_html__('8 Guests', 'psdtheme'); ?></option>
-    									<option value="9"><?= esc_html__('9 Guests', 'psdtheme'); ?></option>
-    									<option value="10"><?= esc_html__('10 Guests', 'psdtheme'); ?></option>
-    								</select>	
-    								<span class="arrow-down js-select-arrow"></span>
-    							</div>
+							<form class="form-container">
+								<div class="form-column">
+									<label for="guests"><?= esc_html__('Guests', 'psdtheme'); ?></label>
+									<select id="guests" name="guests">
+										<option value="1"><?= esc_html__('1 Guest', 'psdtheme'); ?></option>
+										<option value="2"><?= esc_html__('2 Guests', 'psdtheme'); ?></option>
+										<option value="3"><?= esc_html__('3 Guests', 'psdtheme'); ?></option>
+										<option value="4"><?= esc_html__('4 Guests', 'psdtheme'); ?></option>
+										<option value="5"><?= esc_html__('5 Guests', 'psdtheme'); ?></option>
+										<option value="6"><?= esc_html__('6 Guests', 'psdtheme'); ?></option>
+										<option value="7"><?= esc_html__('7 Guests', 'psdtheme'); ?></option>
+										<option value="8"><?= esc_html__('8 Guests', 'psdtheme'); ?></option>
+										<option value="9"><?= esc_html__('9 Guests', 'psdtheme'); ?></option>
+										<option value="10"><?= esc_html__('10 Guests', 'psdtheme'); ?></option>
+									</select>	
+									<span class="arrow-down js-select-arrow"></span>
+								</div>
     							<div class="form-column">
     								<label for="category"><?= esc_html__('Category', 'psdtheme'); ?></label>
     								<select id="category" name="category" class="js-category-select">
