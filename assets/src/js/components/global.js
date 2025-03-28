@@ -127,7 +127,7 @@ class Global {
 				// Enable the cruise select dropdown
 				cruiseSelect.prop('disabled', false);
 			});
-
+			AOS.init();
 
 
 		});

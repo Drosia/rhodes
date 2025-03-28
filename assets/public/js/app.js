@@ -154,6 +154,7 @@ class Global {
 
         cruiseSelect.prop('disabled', false);
       });
+      AOS.init();
     });
   }
 
