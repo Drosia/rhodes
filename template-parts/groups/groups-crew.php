@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="crew--wrapper">
                     <?php if ( ! empty($crew_image) ) : ?>
-                        <div class="crew__left">
+                        <div class="crew__left" data-aos="fade-right" data-aos-duration="1000">
                             <div class="crew__image">
                                 <?php echo wp_get_attachment_image( $crew_image, 'crew_image', false, array( 'class' => 'crew_image' ) ); ?>
                             </div>
@@ -35,16 +35,16 @@
                     <?php endif; ?>
                     <div class="crew__right">
                         <?php if( $subtitle) : ?>
-                            <h3> <?= $subtitle ?></h3>
+                            <h3 data-aos="fade-up" data-aos-duration="1000"> <?= $subtitle ?></h3>
                         <?php endif; ?>
                         <?php if( $title) : ?>
-                            <h2> <?= $title ?></h2>
+                            <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $title ?></h2>
                         <?php endif; ?>
                         <?php if( $text) : ?>
-                            <p> <?= $text ?></p>
+                            <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"> <?= $text ?></p>
                         <?php endif; ?>
                         <?php if( !empty($button) ): ?>
-                            <a href="<?php echo esc_url($button['url']); ?>" class="btn btn--200 btn--blue"><span><?php echo esc_html($button['title']); ?></span></a>
+                            <a href="<?php echo esc_url($button['url']); ?>" class="btn btn--200 btn--blue" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000"><span><?php echo esc_html($button['title']); ?></span></a>
                         <?php endif; ?>
                     </div>
                 </div>

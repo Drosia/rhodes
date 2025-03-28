@@ -15,7 +15,7 @@
         <div class="container">
 			<div class="simple-text">
 				<?php if( $free_text ) : ?>
-					<p><?=  $free_text; ?></p>
+					<p data-aos="fade-up" data-aos-duration="1000"><?=  $free_text; ?></p>
 				<?php endif; ?>
 			</div>
         </div>

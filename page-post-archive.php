@@ -60,15 +60,15 @@ $categories = get_categories(array(
 ?>
 <section class="section section-post-archive">
     <div class="container">
-        <div class="archive-header fade-in">
+        <div class="archive-header" data-aos="fade-up" data-aos-duration="1000">
             <h1><?php echo esc_html($archive_title); ?></h1>
             <?php if ($archive_description): ?>
-                <p><?php echo esc_html($archive_description); ?></p>
+                <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?php echo esc_html($archive_description); ?></p>
             <?php endif; ?>
         </div>
         
         <?php if ($show_filters && !empty($categories)): ?>
-        <div class="archive-filters slide-up">
+        <div class="archive-filters" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
             <button class="filter-button active" data-category="all">All</button>
             <?php foreach ($categories as $category): ?>
                 <button class="filter-button" data-category="<?php echo esc_attr($category->slug); ?>">
@@ -80,7 +80,7 @@ $categories = get_categories(array(
         
         <div class="archive-grid">
             <?php if ($featured_post): ?>
-                <article class="archive-grid__featured fade-in">
+                <article class="archive-grid__featured" data-aos="fade-up" data-aos-duration="1000">
                     <?php if (has_post_thumbnail($featured_post->ID)): ?>
                         <img src="<?php echo get_the_post_thumbnail_url($featured_post->ID, 'large'); ?>" 
                             alt="<?php echo esc_attr($featured_post->post_title); ?>" 
@@ -124,12 +124,11 @@ $categories = get_categories(array(
             <?php
             // Display secondary featured posts (2-column layout)
             if (!empty($secondary_posts)): 
-                $delay = 0;
+                $index = 0;
                 foreach ($secondary_posts as $post):
                     setup_postdata($GLOBALS['post'] =& $post);
-                    $delay += 0.2;
             ?>
-                <article class="archive-grid__secondary slide-up" style="animation-delay: <?php echo $delay; ?>s;">
+                <article class="archive-grid__secondary" data-aos="fade-up" data-aos-delay="<?= 600 + ($index * 200) ?>" data-aos-duration="1000">
                     <?php if (has_post_thumbnail()): ?>
                         <img src="<?php echo get_the_post_thumbnail_url(null, 'medium_large'); ?>" 
                             alt="<?php echo esc_attr(get_the_title()); ?>" 
@@ -165,6 +164,7 @@ $categories = get_categories(array(
                     <a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
                 </article>
             <?php 
+                    $index++;
                 endforeach;
                 wp_reset_postdata();
             endif; 
@@ -174,10 +174,8 @@ $categories = get_categories(array(
             <div class="archive-grid__small">
                 <?php
                 if ($grid_posts->have_posts()):
-                    $delay = 0.4;
+                    $index = 0;
                     while ($grid_posts->have_posts()): $grid_posts->the_post();
-                        $delay += 0.1;
-                        
                         // Get post categories for filtering
                         $post_categories = get_the_category();
                         $category_classes = '';
@@ -185,7 +183,7 @@ $categories = get_categories(array(
                             $category_classes .= ' category-' . $category->slug;
                         }
                 ?>
-                    <article class="archive-grid__small-item slide-up <?php echo esc_attr($category_classes); ?>" style="animation-delay: <?php echo $delay; ?>s;">
+                    <article class="archive-grid__small-item <?php echo esc_attr($category_classes); ?>" data-aos="fade-up" data-aos-delay="<?= 800 + ($index * 100) ?>" data-aos-duration="1000">
                         <div class="archive-grid__small-item-image-container">
                             <?php if (has_post_thumbnail()): ?>
                                 <img src="<?php echo get_the_post_thumbnail_url(null, 'medium'); ?>" 
@@ -227,6 +225,7 @@ $categories = get_categories(array(
                         <a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
                     </article>
                 <?php 
+                    $index++;
                     endwhile;
                     wp_reset_postdata();
                 endif; 

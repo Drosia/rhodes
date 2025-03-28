@@ -23,17 +23,17 @@
 				<div class="hero">
 					<div class="hero__content <?= !$show_form_on_hero_section ? 'mb-auto' : ''; ?>">
 						<?php if( $title) : ?>
-							<h1> <?= $title ?></h1>
+							<h1 data-aos="fade-up" data-aos-duration="1000"> <?= $title ?></h1>
 						<?php endif; ?>
 						<?php if( $text) : ?>
-							<p> <?= $text ?></p>
+							<p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $text ?></p>
 						<?php endif; ?>
 						<?php if( $button) : ?>
-							<a href="<?= $button['url'] ?>" class="btn btn--white"> <span><?= $button['title'] ?></span></a>
+							<a href="<?= $button['url'] ?>" class="btn btn--white" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"> <span><?= $button['title'] ?></span></a>
 						<?php endif; ?>
 					</div>
 					<?php if ( $show_form_on_hero_section ) : ?>
-							<form class="form-container">
+							<form class="form-container" data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000">
 								<div class="form-column">
 									<label for="guests"><?= esc_html__('Guests', 'psdtheme'); ?></label>
 									<select id="guests" name="guests">

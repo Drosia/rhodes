@@ -12,7 +12,7 @@ if ($news_related): ?>
     <section class="section section--news">
         <div class="container">
             <?php if ($title_of_news): ?>
-                <h2><?= esc_html($title_of_news); ?></h2>
+                <h2 data-aos="fade-up" data-aos-duration="1000"><?= esc_html($title_of_news); ?></h2>
             <?php endif; ?>
             
             <div class="archive-grid__small">
@@ -29,7 +29,7 @@ if ($news_related): ?>
                         $category_classes .= ' category-' . $category->slug;
                     }
                 ?>
-                    <article class="archive-grid__small-item slide-up<?php echo esc_attr($category_classes); ?>" style="animation-delay: <?php echo esc_attr($delay); ?>s;">
+                    <article class="archive-grid__small-item slide-up<?php echo esc_attr($category_classes); ?>" style="animation-delay: <?php echo esc_attr($delay); ?>s;" data-aos="fade-up" data-aos-delay="<?= $delay * 200 ?>" data-aos-duration="1000">
                         <div class="archive-grid__small-item-image-container">
                             <?php if (has_post_thumbnail()): ?>
                                 <img src="<?php echo esc_url(get_the_post_thumbnail_url(null, 'medium_large')); ?>" 
@@ -71,7 +71,7 @@ if ($news_related): ?>
             </div>
             
             <?php if ($link_to_all_blog): ?>
-                <a class="see-more" href="<?= esc_url($link_to_all_blog['url']); ?>">
+                <a class="see-more" href="<?= esc_url($link_to_all_blog['url']); ?>" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                     <?= esc_html($link_to_all_blog['title']); ?>
                 </a>
             <?php endif; ?>

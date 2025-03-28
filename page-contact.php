@@ -18,15 +18,15 @@ get_header(); ?>
         <section class="section section-pre_footer section-pre_footer-page-tpl">
             <div class="container">
                 <div class="pre_footer">
-                    <div class="pre_footer--left">
+                    <div class="pre_footer--left" data-aos="fade-right" data-aos-duration="1000">
                         <?php if( $title) : ?>
-                            <h2> <?= $title ?></h2>
+                            <h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title ?></h2>
                         <?php endif; ?>
                         <?php if( $message) : ?>
-                            <p> <?= $message ?></p>
+                            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $message ?></p>
                         <?php endif; ?>
                         <!-- Add Contact Details Below Header -->
-                        <div class="contact-details">
+                        <div class="contact-details" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                             <ul>
                                 <?php if( !empty($telephone) ) : ?>
                                     <li><strong>Telephone:</strong> <a href="tel:<?= $telephone['url']; ?>"><?= $telephone['title'] ?></a></li>
@@ -40,9 +40,9 @@ get_header(); ?>
                             </ul>
                         </div>
                     </div>
-                    <div class="pre_footer--right">
+                    <div class="pre_footer--right" data-aos="fade-left" data-aos-duration="1000">
                         <?php if( !empty($contact_form_shortcode) && shortcode_exists('contact-form-7') ): ?>
-                            <div class="form-wrapper"> <?= do_shortcode($contact_form_shortcode); ?></div>
+                            <div class="form-wrapper" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= do_shortcode($contact_form_shortcode); ?></div>
                         <?php endif; ?>
                     </div>
                 </div>

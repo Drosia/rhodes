@@ -2511,6 +2511,11 @@ html {
   line-height: var(--main-line-height);
   scroll-behavior: smooth; }
 
+html[lang="de-DE"] .container {
+  transform: scale(1.02);
+  /* Slight increase */
+  transform-origin: top left; }
+
 .container--header {
   max-width: 1280px; }
 .container--no-padding {
@@ -3369,7 +3374,8 @@ button-widget {
 .cruise-excerpt {
   display: block;
   font-size: 15px;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  min-height: 66px; }
 .cruise-duration {
   display: block;
   text-align: left;
@@ -3651,8 +3657,7 @@ button-widget {
   .crew__right p {
     font-size: 18px;
     line-height: 1.3;
-    padding-bottom: 22px;
-    letter-spacing: 2.5px; }
+    padding-bottom: 22px; }
   .crew__right .btn {
     margin-left: 0; }
     @media only screen and (max-width: 768px) {

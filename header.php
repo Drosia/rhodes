@@ -29,7 +29,7 @@
 						$telephone = get_field( 'telephone', 'options' );
 					?>
 					<?php if ( $email || $telephone ) : ?>
-						<div class="header__top">
+						<div class="header__top" data-aos="fade-down" data-aos-duration="1000">
 							<?php if ( $email ) : ?>
 								<a href="<?= $email['url'] ?>"> <?= $email['title'] ?> </a>
 							<?php endif; ?>
@@ -39,7 +39,7 @@
 						</div>
 					<?php endif; ?>
 					<div class="header-row">
-						<div class="header__left">
+						<div class="header__left" data-aos="fade-right" data-aos-duration="1000">
 							<a href="<?php echo home_url(); ?>" class="header-logo">
 								<?php $website_logo = get_field( 'logo', 'options' );?>
 								<img src="<?php echo $website_logo; ?>" alt="website logo" width="190" height="71">
@@ -52,7 +52,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="header__center">
+						<div class="header__center" data-aos="fade-up" data-aos-duration="1000">
 							<div class="header-nav-menu jsHeaderMenuSimple">
 								<?php
 								wp_nav_menu(array(

@@ -21,16 +21,16 @@
         <div class="container">
 			<div class="simple-text">
 				<?php if( $title) : ?>
-					<h2> <?= $title ?></h2>
+					<h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title ?></h2>
 				<?php endif; ?>
 				<?php if( $subtitle) : ?>
-					<span> <?= $subtitle ?></span>
+					<span data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $subtitle ?></span>
 				<?php endif; ?>
 				<?php if( $text) : ?>
-					<p> <?= $text ?></p>
+					<p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"> <?= $text ?></p>
 				<?php endif; ?>
 				<?php if( $button) : ?>
-					<a href="<?= $button['url'] ?>" class="btn btn--blue btn--200"> <span><?= $button['title'] ?></span></a>
+					<a href="<?= $button['url'] ?>" class="btn btn--blue btn--200" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000"> <span><?= $button['title'] ?></span></a>
 				<?php endif; ?>				
 			</div>
         </div>

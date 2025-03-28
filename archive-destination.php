@@ -9,8 +9,8 @@ get_header(); ?>
         if ($title || $subtitle): ?>
             <section class="archive-destinations">
                 <div class="container">
-                    <h1><?= esc_html($title); ?></h1>
-                    <h2><?= esc_html($subtitle); ?></h2>
+                    <h1 data-aos="fade-up" data-aos-duration="1000"><?= esc_html($title); ?></h1>
+                    <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?= esc_html($subtitle); ?></h2>
                 </div>
             </section>
         <?php endif; ?>
@@ -31,8 +31,10 @@ get_header(); ?>
             <?php if ($destination_query->have_posts()) : ?>
                 <div class="location">
                     <div class="location--container">
-                        <?php while ($destination_query->have_posts()) : $destination_query->the_post(); ?>
-                            <div class="location--item archive--items">
+                        <?php 
+                        $index = 0;
+                        while ($destination_query->have_posts()) : $destination_query->the_post(); ?>
+                            <div class="location--item archive--items" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
                                 <a href="<?php the_permalink(); ?>" class="location-link">
                                     <?php if (has_post_thumbnail()) : ?>
                                         <div class="location-image background-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>')">
@@ -44,13 +46,15 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </a>
                             </div>
-                        <?php endwhile; ?>
+                        <?php 
+                        $index++;
+                        endwhile; ?>
                     </div>
                     <?php 
                     // Check if a 'link' field is set in ACF (if so, show the "See more" link)
                     $link = get_field('link'); // Or use get_sub_field if you are within a repeater
                     if ($link) : ?>
-                        <a class="see-more" href="<?= esc_url($link['url']); ?>"><?= esc_html($link['title']); ?></a>
+                        <a class="see-more" href="<?= esc_url($link['url']); ?>" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000"><?= esc_html($link['title']); ?></a>
                     <?php endif; ?>
                 </div>
             <?php else : ?>

@@ -7,20 +7,22 @@ get_header(); ?>
 
 <section class="section section--faq">
     <div class="container">
-        <div class="faq-header">
+        <div class="faq-header" data-aos="fade-up" data-aos-duration="1000">
             <h1 class="faq-title"><?php the_title(); ?></h1>
             <?php if ( get_field( 'message' ) ) : ?>
-                <h2 class="faq-subtitle"><?php echo get_field( 'message' ) ?></h2>
+                <h2 class="faq-subtitle" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?php echo get_field( 'message' ) ?></h2>
             <?php endif; ?>
         </div>
 
         <?php if( have_rows('faq_items') ): ?>
             <div class="faq-items">
-                <?php while( have_rows('faq_items') ): the_row(); 
+                <?php 
+                $index = 0;
+                while( have_rows('faq_items') ): the_row(); 
                     $question = get_sub_field('question');
                     $answer = get_sub_field('answer');
                 ?>
-                    <div class="faq-item">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="<?= 400 + ($index * 100) ?>" data-aos-duration="1000">
                         <button class="faq-question" aria-expanded="false">
                             <span><?php echo esc_html($question); ?></span>
                             <svg class="icon-arrow" width="24" height="24" viewBox="0 0 24 24">

@@ -14,9 +14,10 @@
                     'footer_column_3' => 'footer--col-3'
                 ];
 
+                $column_index = 0;
                 foreach ( $footer_columns as $column_key => $column_class ) : 
                     if ( have_rows($column_key, 'options') ) : ?>
-                        <div class="<?= esc_attr($column_class); ?>">
+                        <div class="<?= esc_attr($column_class); ?>" data-aos="fade-up" data-aos-delay="<?= $column_index * 200 ?>" data-aos-duration="1000">
                             <?php while ( have_rows($column_key, 'options') ) : the_row(); 
                                 $title = get_sub_field('title');
                                 $links = get_sub_field('links');
@@ -66,6 +67,7 @@
                         </div>
                         <?php endwhile; ?>
                     <?php endif; 
+                    $column_index++;
                 endforeach; ?>
             </div>
             <?php if ( have_rows('outer_footer', 'options') ) : ?>

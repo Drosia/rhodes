@@ -11,7 +11,7 @@ get_header(); ?>
         <div class="single-post__content">
             <?php while (have_posts()) : the_post(); ?>
                 <article class="post">
-                    <header class="post__header">
+                    <header class="post__header" data-aos="fade-up" data-aos-duration="1000">
                         <!-- Categories -->
                         <div class="post__categories">
                             <?php the_category(' '); ?>
@@ -40,17 +40,17 @@ get_header(); ?>
 
                     <!-- Featured Image -->
                     <?php if (has_post_thumbnail()) : ?>
-                        <div class="post__featured-image">
+                        <div class="post__featured-image" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                             <?php the_post_thumbnail('full'); ?>
                         </div>
                     <?php endif; ?>
 
                     <!-- Post Content -->
-                    <div class="post__content">
+                    <div class="post__content" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
                         <?php the_content(); ?>
                     </div>
 
-                    <footer class="post__footer">
+                    <footer class="post__footer" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
                         <!-- Tags -->
                         <?php if (has_tag()) : ?>
                             <div class="post__tags">
@@ -113,9 +113,11 @@ get_header(); ?>
                         if ($related_articles->have_posts()) : ?>
                             <section class="section article-suggestions">
                                 <div class="container">
-                                    <h2 class="article-suggestions__heading">You May Also Enjoy</h2>
+                                    <h2 class="article-suggestions__heading" data-aos="fade-up" data-aos-duration="1000">You May Also Enjoy</h2>
                                     <div class="article-grid">
-                                        <?php while ($related_articles->have_posts()) : $related_articles->the_post(); 
+                                        <?php 
+                                        $index = 0;
+                                        while ($related_articles->have_posts()) : $related_articles->the_post(); 
                                             $article_id = get_the_ID();
                                             $article_title = get_the_title();
                                             $article_permalink = get_permalink();
@@ -123,7 +125,7 @@ get_header(); ?>
                                             $article_excerpt = wp_trim_words(get_the_excerpt(), 12, '...');
                                             $article_date = get_the_date('M d, Y');
                                         ?>
-                                            <div class="article-card">
+                                            <div class="article-card" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
                                                 <a href="<?= esc_url($article_permalink); ?>" class="article-card__link">
                                                     <?php if (!empty($article_thumb)): ?>
                                                         <div class="article-card__image" style="background-image:url('<?= esc_url($article_thumb) ?>')">
@@ -145,7 +147,7 @@ get_header(); ?>
                                                     </div>
                                                 </a>
                                             </div>
-                                        <?php endwhile; ?>
+                                        <?php $index++; endwhile; ?>
                                     </div>
                                 </div>
                             </section>
@@ -155,7 +157,7 @@ get_header(); ?>
                     ?>
 
                     <!-- Author Bio -->
-                    <div class="post__author-bio">
+                    <div class="post__author-bio" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
                         <div class="author-avatar">
                             <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
                         </div>

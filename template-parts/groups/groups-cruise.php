@@ -34,26 +34,26 @@
                 <?php if ( ! empty($title) && ! empty($subtitle) && ! empty($quoter) ) : ?>
                     <div class="cruises__top">
                         <?php if( $title) : ?>
-                            <h2> <?= $title ?></h2>
+                            <h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title ?></h2>
                         <?php endif; ?>
                         <?php if( $subtitle) : ?>
-                            <p> <?= $subtitle ?></p>
+                            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $subtitle ?></p>
                         <?php endif; ?>
                         <?php if( $quoter) : ?>
-                            <span> <?= $quoter ?></span>
+                            <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"> <?= $quoter ?></span>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div class="cruises__bottom">
                     <?php if( $title_bottom) : ?>
-                        <h2> <?= $title_bottom ?></h2>
+                        <h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title_bottom ?></h2>
                     <?php endif; ?>
                     <?php if( $text_bottom) : ?>
-                        <p> <?= $text_bottom ?></p>
+                        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $text_bottom ?></p>
                     <?php endif; ?>
                     <?php if ($cruises) : ?>
                         <div class="cruises--container">
-                            <?php foreach ($cruises as $cruise_id) : 
+                            <?php foreach ($cruises as $index => $cruise_id) : 
                                 $cruise_title   = get_the_title($cruise_id);
                                 $cruise_permalink = get_permalink($cruise_id);
                                 $cruise_thumb   = get_the_post_thumbnail_url($cruise_id, 'full');
@@ -108,7 +108,7 @@
                                 
 
                             ?>
-                                <div class="cruise--item">
+                                <div class="cruise--item" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
                                     <a href="<?= esc_url($cruise_permalink); ?>" class="cruise-link">
                                         <?php if ($cruise_thumb) : ?>
                                             <div class="cruise-image">

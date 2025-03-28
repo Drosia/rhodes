@@ -12,11 +12,11 @@ $archive_description = get_field('archive_description', 'option');
 ?>
 
 <div class="container">
-	<h1><?php echo esc_html($archive_title ?: get_the_archive_title()); ?></h1>
+	<h1 data-aos="fade-up" data-aos-duration="1000"><?php echo esc_html($archive_title ?: get_the_archive_title()); ?></h1>
 	
 	<div class="archive-grid">
 		<?php if ($featured_post): ?>
-			<article class="archive-grid__featured">
+			<article class="archive-grid__featured" data-aos="fade-up" data-aos-duration="1000">
 				<?php if (has_post_thumbnail($featured_post->ID)): ?>
 					<img src="<?php echo get_the_post_thumbnail_url($featured_post->ID, 'large'); ?>" 
 						 alt="<?php echo esc_attr($featured_post->post_title); ?>" 
@@ -49,12 +49,13 @@ $archive_description = get_field('archive_description', 'option');
 
 		<?php
 		if (have_posts()):
+			$index = 0;
 			while (have_posts()): the_post();
 				// Skip if this is the featured post
 				if ($featured_post && $featured_post->ID === get_the_ID()) continue;
 				?>
 				
-				<article class="archive-grid__item">
+				<article class="archive-grid__item" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
 					<?php if (has_post_thumbnail()): ?>
 						<img src="<?php echo get_the_post_thumbnail_url(null, 'medium_large'); ?>" 
 							 alt="<?php echo esc_attr(get_the_title()); ?>" 
@@ -80,7 +81,9 @@ $archive_description = get_field('archive_description', 'option');
 					<a href="<?php the_permalink(); ?>" class="archive-grid__item-link" aria-label="Read more about <?php echo esc_attr(get_the_title()); ?>"></a>
 				</article>
 				
-			<?php endwhile;
+				<?php 
+				$index++;
+			endwhile;
 		endif;
 		?>
 	</div>

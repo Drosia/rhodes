@@ -26,8 +26,12 @@ html {
 	line-height: var(--main-line-height);
 	scroll-behavior: smooth;
 }
-
+html[lang="de-DE"] .container {
+    transform: scale(1.02); /* Slight increase */
+    transform-origin: top left;
+}
 .container {
+	
 	&--header {
 		max-width: 1280px;
 	}
