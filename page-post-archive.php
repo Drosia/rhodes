@@ -61,7 +61,7 @@ $categories = get_categories(array(
 <section class="section section-post-archive">
     <div class="container">
         <div class="archive-header" data-aos="fade-up" data-aos-duration="1000">
-            <h1><?php echo esc_html($archive_title); ?></h1>
+            <h1><?php echo esc_html( __( $archive_title, 'psdtheme' ) ); ?></h1>
             <?php if ($archive_description): ?>
                 <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?php echo esc_html($archive_description); ?></p>
             <?php endif; ?>

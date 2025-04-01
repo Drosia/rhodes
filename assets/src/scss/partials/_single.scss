@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .single-post {
-    padding: 80px 0 150px;
+    padding: 120px 0 150px;
 
     &__content {
 
@@ -42,7 +42,7 @@
             letter-spacing: -0.02em;
             color: #0f1832;
             margin-bottom: 20px;
-
+            line-height: 1.1;
             @media only screen and (max-width: 768px) {
                 font-size: 35px;
             }

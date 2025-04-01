@@ -52,7 +52,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="header__center" data-aos="fade-up" data-aos-duration="1000">
+						<div class="header__center">
 							<div class="header-nav-menu jsHeaderMenuSimple">
 								<?php
 								wp_nav_menu(array(

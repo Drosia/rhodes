@@ -5,7 +5,7 @@
    position: fixed;
    top: 0;
    left: 0;
-   width: 100%;
+   width: 100vw;
    z-index: 999;
 
    &-row {
@@ -37,6 +37,7 @@
          max-width: 100%;
          width: 100%;
          display: flex;
+         align-items: center;
 
          .header-logo {
             margin-left: auto;

@@ -155,7 +155,7 @@ get_header(); ?>
                         wp_reset_postdata();
                     }
                     ?>
-
+                <?php if ( 0 == 1 ) : ?>  <!-- just comment this out  -->
                     <!-- Author Bio -->
                     <div class="post__author-bio" data-aos="fade-up" data-aos-delay="800" data-aos-duration="1000">
                         <div class="author-avatar">
@@ -169,6 +169,7 @@ get_header(); ?>
                             <?php endif; ?>
                         </div>
                     </div>
+                <?php endif; ?>
                 </article>
             <?php endwhile; ?>
         </div>

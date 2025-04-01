@@ -2493,7 +2493,7 @@ body:not(.wp-admin) {
    ========================================================================== */
 html,
 body {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0;
   padding: 0; }
@@ -2504,17 +2504,24 @@ body {
     body.active header {
       background-color: #0f1832; }
 
+@media only screen and (max-width: 768px) {
+  .single-destination .mb-auto {
+    padding-top: 100px; } }
+
+@media only screen and (max-width: 768px) {
+  .single-cruise .mb-auto {
+    margin-bottom: 0px; } }
+
+body,
+#app {
+  overflow-x: hidden !important; }
+
 html {
   color: var(--main-font-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   line-height: var(--main-line-height);
   scroll-behavior: smooth; }
-
-html[lang="de-DE"] .container {
-  transform: scale(1.02);
-  /* Slight increase */
-  transform-origin: top left; }
 
 .container--header {
   max-width: 1280px; }
@@ -2525,13 +2532,13 @@ html[lang="de-DE"] .container {
   position: relative; }
 
 .archive-destinations {
-  margin: 200px 0 0px;
+  margin: 250px 0 0px;
   color: #0f1832;
   line-height: 1.2;
   text-align: center; }
   @media only screen and (max-width: 1024px) {
     .archive-destinations {
-      margin: 150px 0 0px; } }
+      margin: 200px 0 0px; } }
   .archive-destinations h1 {
     font-size: 90px; }
     @media only screen and (max-width: 1024px) {
@@ -2550,7 +2557,11 @@ html[lang="de-DE"] .container {
         font-size: 20px; } }
 
 .page-template-page-gallery header,
-.page-template-default header, .page-template-page-faq header, .post-template-default header, .page-template-page-post-archive header, .archive header {
+.page-template-default header,
+.page-template-page-faq header,
+.post-template-default header,
+.page-template-page-post-archive header,
+.archive header {
   background-color: #0f1832; }
 
 .post-type-archive-destination {
@@ -2738,6 +2749,25 @@ button-widget {
       .section--news h2 {
         margin-bottom: 50px;
         font-size: 32px; } }
+
+.map-container {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  overflow: hidden;
+  background: #f4f4f4; }
+
+/* Make the iframe fill the container */
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:Elements]
@@ -2947,7 +2977,7 @@ button-widget {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 999; }
   .header-row {
     margin: 25px 0;
@@ -2970,7 +3000,8 @@ button-widget {
         flex-basis: 100%;
         max-width: 100%;
         width: 100%;
-        display: flex; }
+        display: flex;
+        align-items: center; }
         .header__left .header-logo {
           margin-left: auto; }
         .header__left .menu-toggle {
@@ -3106,7 +3137,8 @@ button-widget {
     .cruise-hero-extra {
       flex-direction: column;
       align-items: center;
-      margin: 25px auto 15px; } }
+      margin: 25px auto 15px;
+      gap: 0px; } }
   .cruise-hero-extra__item {
     display: flex;
     flex-direction: column;
@@ -3125,7 +3157,7 @@ button-widget {
       height: auto; }
       @media only screen and (max-width: 768px) {
         .cruise-hero-extra__icon img {
-          max-width: 60px; } }
+          max-width: 22px; } }
   .cruise-hero-extra__title {
     font-size: 18px;
     font-weight: bold;
@@ -3153,6 +3185,7 @@ button-widget {
   overflow: hidden; }
   @media only screen and (max-width: 1024px) {
     .form-container {
+      margin-top: 60px;
       flex-direction: column;
       margin-bottom: 20px; } }
 .form-column {
@@ -3673,10 +3706,6 @@ button-widget {
 .section--cruise {
   margin: 90px 0 140px; }
 
-.cruise--wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px; }
 .cruise__right {
   flex-basis: 315px;
   max-width: 315px;
@@ -3737,7 +3766,7 @@ button-widget {
    SCSS Styles [PARTIALS:Single Post]
    ========================================================================== */
 .single-post {
-  padding: 80px 0 150px; }
+  padding: 120px 0 150px; }
   .single-post .post__header {
     margin-bottom: 30px;
     text-align: center;
@@ -3761,7 +3790,8 @@ button-widget {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: #0f1832;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    line-height: 1.1; }
     @media only screen and (max-width: 768px) {
       .single-post .post__title {
         font-size: 35px; } }
@@ -4144,11 +4174,11 @@ button-widget {
       font-size: 14px; }
 
 .section--faq {
-  margin: 160px 0 160px;
+  margin: 250px 0 160px;
   background-color: #f9f9f9; }
   @media (max-width: 768px) {
     .section--faq {
-      margin: 140px 0; } }
+      margin: 200px 0; } }
   .section--faq .faq-header {
     text-align: center;
     margin-bottom: 60px; }
@@ -4585,7 +4615,11 @@ button-widget {
   to {
     transform: rotate(360deg); } }
 .section-post-archive {
-  margin-bottom: 150px; }
+  margin-bottom: 150px;
+  margin-top: 250px; }
+  @media only screen and (max-width: 768px) {
+    .section-post-archive {
+      margin-top: 200px; } }
 
 /* ==========================================================================
    SCSS Styles [PARTIALS:FOOTER]
@@ -4695,7 +4729,7 @@ button-widget {
     padding-top: 330px; }
     @media only screen and (max-width: 1366px) {
       .section-pre_footer.section-pre_footer-page-tpl {
-        padding-top: 150px; } }
+        padding-top: 200px; } }
     .section-pre_footer.section-pre_footer-page-tpl .form-wrapper {
       margin-top: 0; }
     .section-pre_footer.section-pre_footer-page-tpl .pre_footer--left {
