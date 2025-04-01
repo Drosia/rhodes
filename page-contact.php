@@ -39,11 +39,11 @@ get_header(); ?>
                                 <?php endif; ?>
                             </ul>
                         </div>
-    <div class="map-container">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.01664%2C36.08226%2C28.08664%2C36.11226&amp;layer=mapnik" 
-                allowfullscreen></iframe>
-    </div>
-                        
+                        <?php if ( get_field('map_iframe') ) : ?>
+                            <div class="map-container">
+                                <?= get_field('map_iframe') ?>
+                            </div>
+                        <?php endif;?>                        
                     </div>
                     <div class="pre_footer--right" data-aos="fade-left" data-aos-duration="1000">
                         <?php if( !empty($contact_form_shortcode) && shortcode_exists('contact-form-7') ): ?>

@@ -3392,7 +3392,8 @@ button-widget {
 .cruise--item {
   color: #fff;
   flex-basis: 325px;
-  max-width: 325px; }
+  max-width: 325px;
+  text-align: center; }
   .cruise--item h3 {
     font-size: 38px;
     line-height: 1.1;
@@ -3407,8 +3408,9 @@ button-widget {
 .cruise-excerpt {
   display: block;
   font-size: 15px;
+  line-height: 1.1;
   margin-bottom: 24px;
-  min-height: 66px; }
+  min-height: 67px; }
 .cruise-duration {
   display: block;
   text-align: left;
@@ -4521,7 +4523,8 @@ button-widget {
     color: #0f1832;
     margin-bottom: 15px;
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    line-height: 1.2; }
     .archive-header h1:after {
       content: '';
       position: absolute;

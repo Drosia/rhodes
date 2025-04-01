@@ -128,7 +128,12 @@ class Global {
 				cruiseSelect.prop('disabled', false);
 			});
 			AOS.init();
-
+			setTimeout(function () {
+				var $iframe = $(".map-container iframe");
+				if ($iframe.length) {
+					$iframe.attr("src", $iframe.attr("src")); // Reload the iframe
+				}
+			}, 500); // 500ms delay
 
 		});
 

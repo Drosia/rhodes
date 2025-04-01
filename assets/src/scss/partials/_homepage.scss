@@ -431,6 +431,7 @@
       color: #fff;
       flex-basis: 325px;
       max-width: 325px;
+      text-align: center;
 
       h3 {
          font-size: 38px;
@@ -452,8 +453,9 @@
    &-excerpt {
       display: block;
       font-size: 15px;
+      line-height: 1.1;
       margin-bottom: 24px;
-      min-height: 66px;
+      min-height: 67px;
    }
 
    &-duration {

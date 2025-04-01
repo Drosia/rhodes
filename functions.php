@@ -178,6 +178,7 @@ function disable_cruise_archive_redirect() {
     }
 }
 add_action('template_redirect', 'disable_cruise_archive_redirect');
+
 /**********************************************************************/
 /* Include the rest of the files here																  */
 /**********************************************************************/
