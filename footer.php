@@ -105,6 +105,8 @@
 <?php endif; ?>
 
 <?php wp_footer(); ?>
-<button-widget widget-id="c1eb5c90-33a8-40fd-b99f-f3e5e74d7a49"></button-widget>
+<?php if ( get_field( 'widget_for_footer_sticky_button', 'options') ): ?>
+	<?php echo get_field( 'widget_for_footer_sticky_button', 'options') ?>
+<?php endif; ?>
 </body>
 </html>

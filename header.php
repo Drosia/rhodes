@@ -63,11 +63,15 @@
 									'menu_class' => 'menu-list menu-list--simple',   // Add a CSS class to the <ul> element
 								));
 								?>
-							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
+								<?php if ( get_field( 'widget_for_header_button', 'options') ): ?>
+									<?php echo get_field( 'widget_for_header_button', 'options') ?>
+								<?php endif; ?>
 							</div><!-- /.header-menu-wrapper -->
 						</div>
 						<div class="header__right">
-							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
+						<?php if ( get_field( 'widget_for_header_button', 'options') ): ?>
+								<?php echo get_field( 'widget_for_header_button', 'options') ?>
+						<?php endif; ?>
 						</div>
 					</div>
 				</div>
