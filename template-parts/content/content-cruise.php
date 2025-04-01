@@ -5,7 +5,7 @@
 
 ?>
 <section class="section section--cruise">
-    <div class="container container--no-padding">
+    <div class="container">
         <div class="cruise--wrapper">
             <div class="cruise__left" data-aos="fade-right" data-aos-duration="1000">
                 <div class="cruise--the-content">
