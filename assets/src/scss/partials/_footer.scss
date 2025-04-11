@@ -32,22 +32,6 @@
       ul {
          list-style: none;
 
-         &.footer-icon-list {
-            li {
-               display: flex;
-               align-items: start;
-               gap: 4px;
-               @media only screen and (max-width: $max-md) {
-                  justify-content: center;
-               }
-            }
-
-            img {
-               width: 16px;
-               height: 16px;
-            }
-         }
-
          li {
             font-size: 15px;
             line-height: 1.3;
@@ -56,7 +40,6 @@
             &:not(:last-of-type) {
                margin-bottom: 5px;
             }
-
 
             a {
                display: block;
@@ -81,30 +64,24 @@
       }
 
    }
-
    &--logo {
       display: flex;
       align-items: center;
       gap: 20px;
       margin-right: auto;
-
       @media only screen and (max-width: $max-md) {
          margin-right: 0;
       }
-
       img {
          max-width: 32px;
       }
    }
-
-   &--txt {
+   &--txt{
       margin-right: auto;
-
       @media only screen and (max-width: $max-md) {
          margin-right: 0;
       }
    }
-
    &__copyright {
       letter-spacing: 1px;
       font-size: 10px;
@@ -156,7 +133,7 @@
       padding-top: 330px;
 
       @media only screen and (max-width: $max-xl) {
-         padding-top: 200px;
+         padding-top: 150px;
       }
 
       .form-wrapper {

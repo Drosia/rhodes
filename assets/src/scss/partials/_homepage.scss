@@ -48,72 +48,6 @@
    }
 }
 
-// Cruise Hero Extra
-.cruise-hero-extra {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   width: 100%;
-   margin: 35px auto 20px;
-   margin-bottom: auto;
-   gap: 20px;
-
-   @media only screen and (max-width: $max-md) {
-      flex-direction: column;
-      align-items: center;
-      margin: 25px auto 15px;
-      gap: 0px;
-   }
-
-   &__item {
-      // flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 0 15px;
-      color: #fff;
-
-      @media only screen and (max-width: $max-md) {
-         margin-bottom: 20px;
-         width: 100%;
-      }
-   }
-
-   &__icon {
-      margin-bottom: 15px;
-
-      img {
-         max-width: 80px;
-         height: auto;
-
-         @media only screen and (max-width: $max-md) {
-            max-width: 22px;
-         }
-      }
-   }
-
-   &__title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-
-      @media only screen and (max-width: $max-md) {
-         font-size: 16px;
-      }
-   }
-
-   &__message {
-      font-size: 16px;
-      line-height: 1.3;
-
-      @media only screen and (max-width: $max-md) {
-         font-size: 14px;
-      }
-   }
-}
-
 .form {
    &-container {
       margin-top: auto;
@@ -127,7 +61,6 @@
       overflow: hidden;
 
       @media only screen and (max-width: $max-lg) {
-         margin-top: 60px;
          flex-direction: column;
          margin-bottom: 20px;
       }
@@ -143,7 +76,6 @@
       flex-basis: 386px;
       max-width: 386px;
       background-color: #fff;
-      padding-right: 15px;
 
       @media only screen and (max-width: $max-lg) {
          flex-basis: 70px;
@@ -173,48 +105,31 @@
       }
 
       label {
-         font-size: 17px;
-         padding-left: 15px;
-         font-weight: 600;
+         font-size: 18px;
+         padding-left: 30px;
       }
 
       input,
       select {
          margin-left: 20px;
-
       }
 
       .arrow-down {
-         margin-left: 4px;
+         margin-right: 50px;
          flex-shrink: 0;
-
-         @media only screen and (max-width: $max-lg) {
-            margin-left: 4px;
-            margin-right: 20px;
-
-         }
       }
 
 
       input,
       select {
-         width: fit-content;
-         width: -webkit-fit-content;
-         width: -moz-fit-content;
-         width: -ms-fit-content;
-         width: -o-fit-content;
+         width: 100%;
          outline: none;
          border: none;
-         font-size: 17px;
+         font-size: 18px;
          line-height: 1;
          background-color: transparent;
-         color: #fff;
+         color: #c7c7c7;
          cursor: pointer;
-
-         @media only screen and (max-width: $max-lg) {
-            width: 100%;
-
-         }
 
          &[type="submit"] {
             font-size: 13px;
@@ -224,9 +139,6 @@
             background: none;
          }
 
-         option {
-            color: #0f1832;
-         }
       }
 
       button {
@@ -392,7 +304,7 @@
 
       p {
          margin-top: 15px;
-         font-size: 18px;
+         font-size: 16px;
 
          @media only screen and (max-width: $max-md) {
             br {
@@ -401,7 +313,7 @@
          }
 
          span {
-            font-size: 16px;
+            font-size: 14px;
 
             @media only screen and (max-width: $max-md) {
                display: block;
@@ -431,7 +343,6 @@
       color: #fff;
       flex-basis: 325px;
       max-width: 325px;
-      text-align: center;
 
       h3 {
          font-size: 38px;
@@ -453,9 +364,7 @@
    &-excerpt {
       display: block;
       font-size: 15px;
-      line-height: 1.1;
       margin-bottom: 24px;
-      min-height: 67px;
    }
 
    &-duration {
@@ -516,14 +425,6 @@
             justify-content: center;
             margin: 0 auto;
             text-align: center;
-         }
-
-         &__content {
-            >span {
-               font-size: 18px;
-               margin-top: 4px;
-               display: block;
-            }
          }
 
       }
@@ -638,7 +539,7 @@
 
       span {
          display: block;
-         font-size: 16px;
+         font-size: 13px;
       }
 
       &:before {
@@ -660,7 +561,7 @@
 .see-more {
    display: block;
    text-align: center;
-   font-size: 16px;
+   font-size: 13px;
    text-decoration: underline;
    margin-top: 25px;
 }
@@ -698,11 +599,10 @@
 
    p {
       margin-top: 10px;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.1;
       color: #0f1832;
-      letter-spacing: 1.1px;
-      text-align: left;
+      letter-spacing: 1.6px;
 
       @media only screen and (max-width: $max-md) {
          letter-spacing: 1.2px;

@@ -132,14 +132,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page();
 
-	acf_add_options_page(array(
-		'page_title' => 'Archive Settings',
-		'menu_title' => 'Archive Settings',
-		'menu_slug'  => 'theme-archive-settings',
-		'capability' => 'edit_posts',
-		'redirect'   => false
-	));
-
 }
 /**********************************************************************/
 
@@ -178,7 +170,6 @@ function disable_cruise_archive_redirect() {
     }
 }
 add_action('template_redirect', 'disable_cruise_archive_redirect');
-
 /**********************************************************************/
 /* Include the rest of the files here																  */
 /**********************************************************************/

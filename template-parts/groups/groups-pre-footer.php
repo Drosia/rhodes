@@ -14,7 +14,7 @@
         <section class="section section-pre_footer">
             <div class="container">
                 <div class="pre_footer">
-                    <div class="pre_footer--left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="pre_footer--left">
                         <?php if( $title) : ?>
                             <h2> <?= $title ?></h2>
                         <?php endif; ?>
@@ -22,7 +22,7 @@
                             <p> <?= $message ?></p>
                         <?php endif; ?>
                     </div>
-                    <div class="pre_footer--right" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="pre_footer--right">
                         <?php if( !empty($contact_form_shortcode) && shortcode_exists('contact-form-7') ): ?>
                             <div class="form-wrapper"> <?= do_shortcode($contact_form_shortcode); ?></div>
                         <?php endif; ?>

@@ -14,20 +14,18 @@ if ($locations_query->have_posts()): ?>
     <section class="section section--location section--location__random">
         <div class="container">
             <?php if( $related_location_title ) : ?>
-                <h2 class="location--title" data-aos="fade-up" data-aos-duration="1000"><?= $related_location_title ?> </h2>
+                <h2 class="location--title"><?= $related_location_title ?> </h2>
             <?php endif; ?>
             <div class="location">
                 <div class="location--container">
-                    <?php 
-                    $index = 0;
-                    while ($locations_query->have_posts()): $locations_query->the_post(); 
+                    <?php while ($locations_query->have_posts()): $locations_query->the_post(); 
                         $location_id      = get_the_ID();
                         $location_title   = get_the_title();
                         $location_permalink = get_permalink();
                         $location_thumb   = get_the_post_thumbnail_url($location_id, 'full');
                         $location_excerpt = get_the_excerpt();
                     ?>
-                        <div class="location--item" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
+                        <div class="location--item">
                             <a href="<?= esc_url($location_permalink); ?>" class="location-link">
                                 <?php if (!empty($location_thumb)): ?>
                                     <div class="location-image background-image" style="background-image:url('<?= esc_url($location_thumb) ?>')">
@@ -39,10 +37,7 @@ if ($locations_query->have_posts()): ?>
                                 <?php endif; ?>
                             </a>
                         </div>
-                    <?php 
-                    $index++;
-                    endwhile; 
-                    ?>
+                    <?php endwhile; ?>
                 </div>
             </div>
         </div>

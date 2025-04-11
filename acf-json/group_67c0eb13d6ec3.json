@@ -41,26 +41,6 @@
             "rows": "",
             "placeholder": "",
             "new_lines": "br"
-        },
-        {
-            "key": "field_67ebcff0e7b99",
-            "label": "Map Iframe",
-            "name": "map_iframe",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
         }
     ],
     "location": [
@@ -81,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1743507462
+    "modified": 1741772533
 }

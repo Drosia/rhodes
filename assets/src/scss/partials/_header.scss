@@ -5,7 +5,7 @@
    position: fixed;
    top: 0;
    left: 0;
-   width: 100vw;
+   width: 100%;
    z-index: 999;
 
    &-row {
@@ -16,28 +16,27 @@
       align-items: center;
       gap: 15px;
 
-      @media only screen and (max-width: $max-xl) {
+      @media only screen and (max-width: $max-lg) {
          flex-direction: column;
       }
    }
 
    &__right {
 
-      @media only screen and (max-width: $max-xl) {
+      @media only screen and (max-width: $max-lg) {
          display: none;
       }
    }
 
    &__left {
-      flex-basis: 190px;
-      max-width: 190px;
+      flex-basis: 140px;
+      max-width: 140px;
 
-      @media only screen and (max-width: $max-xl) {
+      @media only screen and (max-width: $max-lg) {
          flex-basis: 100%;
          max-width: 100%;
          width: 100%;
          display: flex;
-         align-items: center;
 
          .header-logo {
             margin-left: auto;
@@ -50,33 +49,28 @@
    }
 
    &__center {
+      flex-basis: 615px;
+      max-width: 615px;
 
-
-      @media only screen and (max-width: $max-xl) {
+      @media only screen and (max-width: $max-lg) {
          flex-basis: 100%;
          max-width: 100%;
          position: fixed;
-         top: 149px;
+         top: 139px;
          background: #0f1832;
-         left: -1366px;
+         left: -1024px;
          width: 100%;
-         height: calc(100vh - 149px);
+         height: calc(100vh - 139px);
          transition: all 400ms linear;
 
       }
 
       &.active {
-         transform: translateX(1366px);
+         transform: translateX(1024px);
 
          button-widget {
             display: flex;
             justify-content: center;
-
-            @media only screen and (max-width: $max-xl) {
-               margin-top: 10px;
-            }
-
-
          }
       }
 
@@ -87,7 +81,7 @@
 
    &__top {
       margin-top: 30px;
-      font-size: 12px;
+      font-size: 10px;
       color: #fff;
       display: flex;
       justify-content: end;
@@ -104,7 +98,7 @@
       align-items: center;
       gap: 25px;
 
-      @media only screen and (max-width: $max-xl) {
+      @media only screen and (max-width: $max-lg) {
          flex-direction: column;
          gap: 6px;
          margin-top: 50px;
@@ -119,7 +113,7 @@
       }
 
       a {
-         font-size: 16px;
+         font-size: 14px;
          color: #fff;
       }
 
@@ -139,7 +133,7 @@
    display: block;
    cursor: pointer;
 
-   @media only screen and (min-width: $max-xl) {
+   @media only screen and (min-width: $max-lg) {
       display: none;
    }
 

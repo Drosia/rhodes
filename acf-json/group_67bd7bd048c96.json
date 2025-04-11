@@ -588,73 +588,6 @@
             ]
         },
         {
-            "key": "field_67dac6b483241",
-            "label": "Title Of News",
-            "name": "title_of_news",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.333",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_67dac65c9c381",
-            "label": "News Related",
-            "name": "news_related",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.333",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "post"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": 3,
-            "elements": "",
-            "bidirectional": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_67dacb808451f",
-            "label": "Link To All Blog",
-            "name": "link_to_all_blog",
-            "aria-label": "",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.333",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
             "key": "field_67bedd81d861a",
             "label": "Banner with Button",
             "name": "banner_with_button",
@@ -772,5 +705,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1742392234
+    "modified": 1741861919
 }

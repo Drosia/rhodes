@@ -29,7 +29,7 @@
 						$telephone = get_field( 'telephone', 'options' );
 					?>
 					<?php if ( $email || $telephone ) : ?>
-						<div class="header__top" data-aos="fade-down" data-aos-duration="1000">
+						<div class="header__top">
 							<?php if ( $email ) : ?>
 								<a href="<?= $email['url'] ?>"> <?= $email['title'] ?> </a>
 							<?php endif; ?>
@@ -39,10 +39,10 @@
 						</div>
 					<?php endif; ?>
 					<div class="header-row">
-						<div class="header__left" data-aos="fade-right" data-aos-duration="1000">
+						<div class="header__left">
 							<a href="<?php echo home_url(); ?>" class="header-logo">
 								<?php $website_logo = get_field( 'logo', 'options' );?>
-								<img src="<?php echo $website_logo; ?>" alt="website logo" width="190" height="71">
+								<img src="<?php echo $website_logo; ?>" alt="website logo" width="140" height="52">
 							</a>
 							<div class="menu-toggle jsMenuToggle">
 								<div class="menu-toggle__wrapper">
@@ -63,15 +63,11 @@
 									'menu_class' => 'menu-list menu-list--simple',   // Add a CSS class to the <ul> element
 								));
 								?>
-								<?php if ( get_field( 'widget_for_header_button', 'options') ): ?>
-									<?php echo get_field( 'widget_for_header_button', 'options') ?>
-								<?php endif; ?>
+							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
 							</div><!-- /.header-menu-wrapper -->
 						</div>
 						<div class="header__right">
-						<?php if ( get_field( 'widget_for_header_button', 'options') ): ?>
-								<?php echo get_field( 'widget_for_header_button', 'options') ?>
-						<?php endif; ?>
+							<button-widget widget-id="0d84e3f0-c44e-419b-aaf0-95ace468f594"></button-widget>
 						</div>
 					</div>
 				</div>

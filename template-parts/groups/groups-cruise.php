@@ -34,26 +34,26 @@
                 <?php if ( ! empty($title) && ! empty($subtitle) && ! empty($quoter) ) : ?>
                     <div class="cruises__top">
                         <?php if( $title) : ?>
-                            <h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title ?></h2>
+                            <h2> <?= $title ?></h2>
                         <?php endif; ?>
                         <?php if( $subtitle) : ?>
-                            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $subtitle ?></p>
+                            <p> <?= $subtitle ?></p>
                         <?php endif; ?>
                         <?php if( $quoter) : ?>
-                            <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"> <?= $quoter ?></span>
+                            <span> <?= $quoter ?></span>
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div class="cruises__bottom">
                     <?php if( $title_bottom) : ?>
-                        <h2 data-aos="fade-up" data-aos-duration="1000"> <?= $title_bottom ?></h2>
+                        <h2> <?= $title_bottom ?></h2>
                     <?php endif; ?>
                     <?php if( $text_bottom) : ?>
-                        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"> <?= $text_bottom ?></p>
+                        <p> <?= $text_bottom ?></p>
                     <?php endif; ?>
                     <?php if ($cruises) : ?>
                         <div class="cruises--container">
-                            <?php foreach ($cruises as $index => $cruise_id) : 
+                            <?php foreach ($cruises as $cruise_id) : 
                                 $cruise_title   = get_the_title($cruise_id);
                                 $cruise_permalink = get_permalink($cruise_id);
                                 $cruise_thumb   = get_the_post_thumbnail_url($cruise_id, 'full');
@@ -71,44 +71,18 @@
                                     if ($starting_trip && $end_trip) {
                                         $start_time = DateTime::createFromFormat('H:i:s', $starting_trip);
                                         $end_time   = DateTime::createFromFormat('H:i:s', $end_trip);
-                                
+
                                         if ($start_time && $end_time) {
                                             $duration = $end_time->diff($start_time)->h; // Get duration in hours
-                                
-                                            // Format start time as 24-hour format with AM/PM appended manually
-                                            $start_time_formatted = $start_time->format('H:i'); // 24-hour format (e.g., 10:00)
-                                            
-                                            // Format end time as 24-hour format with AM/PM appended manually
-                                            $end_time_formatted = $end_time->format('H:i'); // 24-hour format (e.g., 15:00)
-                                
-                                            // Check if the hour is greater than or equal to 12, add "pm" suffix
-                                            if ((int) $end_time->format('H') >= 12) {
-                                                $end_time_formatted .= ' pm'; // Add 'pm' if the hour is 12 or later
-                                            } else {
-                                                $end_time_formatted .= ' am'; // Add 'am' if the hour is before 12
-                                            }
-                                
-                                            // Similarly for start time
-                                            if ((int) $start_time->format('H') >= 12) {
-                                                $start_time_formatted .= ' pm'; // Add 'pm' if the hour is 12 or later
-                                            } else {
-                                                $start_time_formatted .= ' am'; // Add 'am' if the hour is before 12
-                                            }
-                                
-                                                // Start of Selection
-                                                $trip_duration_text = sprintf( __('%s hour semi-private cruise from %s - %s', 'psdtheme'), $duration, $start_time_formatted, $end_time_formatted );
-                                
-                                            // Add any extra text for guests, if applicable
-                                            $trip_duration_text .= $show_guests_text;
+                                            $trip_duration_text = "{$duration} hour semi-private cruise from " . $start_time->format('H:i') . " - " . $end_time->format('H:i') . $show_guests_text;
                                         }
                                     }
-                                } else {
+                                }else{
                                     $trip_duration_text = $free_text_on_bellow_button;
                                 }
-                                
 
                             ?>
-                                <div class="cruise--item" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
+                                <div class="cruise--item">
                                     <a href="<?= esc_url($cruise_permalink); ?>" class="cruise-link">
                                         <?php if ($cruise_thumb) : ?>
                                             <div class="cruise-image">
@@ -123,9 +97,9 @@
                                         <?php endif; ?>
 
                                         <?php if (!$upon_request) : ?>
-                                            <div class="btn"><?= esc_html__('Book your seats', 'psdtheme'); ?></div>
+                                            <div class="btn">Book your seats</div>
                                         <?php else : ?>
-                                            <div class="btn"><?= esc_html__('Upon Request', 'psdtheme'); ?></div>
+                                            <div class="btn">Upon Request</div>
                                         <?php endif; ?>
 
                                         <?php if ($trip_duration_text) : ?>

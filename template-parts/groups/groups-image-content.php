@@ -32,23 +32,23 @@
 						?>
 
 						<div class="destination-content <?= esc_attr($layout_class); ?>">
-							<div class="destination-content__image" data-aos="<?= $layout_class === 'image-left' ? 'fade-right' : 'fade-left' ?>" data-aos-duration="1000">
+							<div class="destination-content__image">
 								<?php if( !empty($image_id) ): ?>
 									<?= wp_get_attachment_image($image_id, 'full', false, ['class' => 'img-responsive']); ?>
 								<?php endif; ?>
 							</div>
 							<div class="destination-content__text">
 								<?php if( !empty($subtitle) ): ?>
-									<h3 data-aos="fade-up" data-aos-duration="1000"><?= esc_html($subtitle); ?></h3>
+									<h3><?= esc_html($subtitle); ?></h3>
 								<?php endif; ?>
 								<?php if( !empty($title) ): ?>
-									<h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?= esc_html($title); ?></h2>
+									<h2><?= esc_html($title); ?></h2>
 								<?php endif; ?>
 								<?php if( !empty($text) ): ?>
-									<p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000"><?= esc_html($text); ?></p>
+									<p><?= esc_html($text); ?></p>
 								<?php endif; ?>
 								<?php if( !empty($button) ): ?>
-									<a href="<?= esc_url($button['url']); ?>" class="btn btn--blue btn--200" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000"><span><?= esc_html($button['title']); ?></span></a>
+									<a href="<?= esc_url($button['url']); ?>" class="btn btn--blue btn--200"><span><?= esc_html($button['title']); ?></span></a>
 								<?php endif; ?>
 							</div>
 						</div>

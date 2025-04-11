@@ -19,8 +19,8 @@ if ( have_posts() ) {
         if ($title || $subtitle): ?>
             <section class="archive-destinations">
                 <div class="container">
-                    <h1 data-aos="fade-up" data-aos-duration="1000"><?= esc_html($title); ?></h1>
-                    <h2 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000"><?= esc_html($subtitle); ?></h2>
+                    <h1><?= esc_html($title); ?></h1>
+                    <h2><?= esc_html($subtitle); ?></h2>
                 </div>
             </section>
         <?php endif; ?>
@@ -34,10 +34,8 @@ if ( have_posts() ) {
                     $post_title = get_the_title(); // Get the current post title
                     if( $cruice_gallery ): ?>
                         <div class="grid">
-                            <?php 
-                            $index = 0;
-                            foreach( $cruice_gallery as $image_id ): ?>
-                                <div class="grid-item" data-aos="fade-up" data-aos-delay="<?= $index * 100 ?>" data-aos-duration="1000">
+                            <?php foreach( $cruice_gallery as $image_id ): ?>
+                                <div class="grid-item">
                                     <?php 
                                         $image_src = wp_get_attachment_image_src($image_id, $size);
 

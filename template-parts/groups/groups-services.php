@@ -21,11 +21,11 @@
 				<div class="service--wrapper">
 					<?php 
 					// Using foreach to loop through the services (the nested repeater)
-					foreach ($services as $index => $service) :
+					foreach ($services as $service) :
 						$service_title = isset($service['title']) ? $service['title'] : ''; // Get title
 						$service_text = isset($service['text']) ? $service['text'] : ''; // Get text description
 					?>
-						<div class="service" data-aos="fade-up" data-aos-delay="<?= $index * 200 ?>" data-aos-duration="1000">
+						<div class="service">
                             <?php if( !empty($icon) ): ?>
                                 <div class="service-icon">
                                     <?php 
@@ -48,7 +48,7 @@
 					<?php endforeach; ?>
 				</div>
 				<?php if( !empty($button) ): ?>
-						<div class="service-button" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+						<div class="service-button">
 							<a href="<?php echo esc_url($button['url']); ?>" class="btn btn--200"><span><?php echo esc_html($button['title']); ?></span></a>
 						</div>
                 <?php endif; ?>
